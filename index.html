@@ -13,20 +13,49 @@
     <script src="./jquery/jquery.mobile-1.4.5.min.js"></script>
     <!-- 导入总css-->
     <link rel="stylesheet" href="./css/all_html.css">
-    <!-- 修正高度-->
-    <script src="./js/height.js"></script>
-    <style>
-        #footer{
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div data-role="page" id="page">
+
+        <style>
+            #footer #center{
+                text-align: center;
+            }
+            #footer #move{
+                position: absolute;
+                left:0%;
+                width:auto;
+                bottom:0%;
+                height:auto;
+            }
+        </style>
+        <!-- 修正高度-->
+        <script src="./js/height.js"></script>
+        <script>
+            $(document).ready(
+                function(){
+                    const speed = 8000;
+                    var times = 10000;
+                    while(times>0){
+                        $('#move').animate({
+                            'left':'10%'
+                        }, speed);
+                        $('#move').animate({
+                            'left':'80%'
+                        }, speed);
+                        times --;
+                    }
+                    $('#move').animate({
+                            'left':'10%'
+                        }, speed);
+                }
+            );
+        </script>
+        
         <div data-role="header" id="header" data-position="fixed">
             <a href="./index.html" class="ui-btn ui-icon-home ui-btn-icon-left ui-shadow">主页</a>
             <h1>欢迎来到miaomiao的网站!</h1>
-            <a href="#panel" class="ui-btn ui-btn-inline">打开导航</a>
+            <a href="#panel" class="ui-btn">打开导航</a>
         </div>
         <div data-role="content" id="content">
             <div data-role="collapsible">
@@ -35,9 +64,12 @@
             </div>
         </div>
         <div data-role="footer" id="footer" data-position="fixed">
-            <a href="https://mail.qq.com/" class="ui-btn ui-shadow ui-icon-mail ui-btn-icon-left">
-                e-mail:2952310350@qq.com
-            </a>
+            <div id="center">
+                <a href="https://mail.qq.com/" class="ui-btn ui-shadow ui-icon-mail ui-btn-icon-left">
+                    e-mail:2952310350@qq.com
+                </a>
+            </div>
+            <div id="move">tips:遇见bug不要慌,刷新一下解难题。</div>
         </div>
         <div data-role="panel" id="panel">
             <h1>看我干啥</h1>

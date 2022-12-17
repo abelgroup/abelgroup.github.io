@@ -10,3 +10,8 @@
 #footer{
     background-color:rgb(219, 231, 113);
 }
+#header h1{
+    font-size:larger;
+    color:black;
+    font-weight: 500;
+}

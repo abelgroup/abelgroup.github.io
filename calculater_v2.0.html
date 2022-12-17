@@ -13,6 +13,8 @@
     <script src="./jquery/jquery.mobile-1.4.5.min.js"></script>
     <!-- 导入总css-->
     <link rel="stylesheet" href="./css/all_html.css">
+    <!-- 修正高度-->
+    <script src="./js/height.js"></script>
     <script>
         $(document).ready(
             function(){
@@ -107,7 +109,7 @@
 </head>
 <body>
     <div id="page" data-role="page">
-        <div data-role="header" id="header">
+        <div data-role="header" id="header" data-position="fixed">
             <a href="./index.html" class="ui-btn ui-icon-home ui-btn-icon-left ui-shadow">主页</a>
             <h1>
                 MIAOMIAO_CALCULATER v2.0
@@ -186,7 +188,7 @@
                 </div>
             </div>
         </div>
-        <div data-role="footer" id="footer">
+        <div data-role="footer" id="footer" data-position="fixed">
             <center>
             <button data-inline="true" class="ui-btn ui-corner-all" id="calculate">
                 calculate

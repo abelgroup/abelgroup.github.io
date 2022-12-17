@@ -4,240 +4,208 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
-    <title>log_in</title>
+    <title>miaomiao_calculater v2.0</title>
+
     <!-- CDN-->
+    <!-- 引入 jQuery Mobile 样式 -->
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <!-- 引入 jQuery 库 -->
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-</head>
-<style>
-    *{
-        font-size: 110%;
-        color: aliceblue;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        /*text-shadow: 0 0 5px #fff,
-            0 0 20px #fefcc9,
-            10px -10px 30px #feec85,
-            -20px -20px 40px #ffae34,
-            20px -40px 50px #ec760c,
-            -20px -60px 60px #cd4606,
-            0 -80px 70px #973716,
-            10px -90px 80px #451b0e;*/
-    }
-    #all{
-        background-image: url('./img/background2.jpg');
-        position: absolute;
-        top:0;
-        left:0;
-        height:100%;
-        width:100%;
-    }
-    #head{
-        position:absolute;
-        top:3%;
-        text-align: center;
-        font-size: 300%;
-    }
-    #form{
-        background-color:rgba(0, 0, 0, 0.5);
-        position:absolute;
-        top:20%;
-        left:20%;
-        right:20%;
-        bottom:20%;
-        border-radius: 5%;
-        box-shadow:0 0 5px #fff,
-            0 0 20px #fefcc9,
-            10px -10px 30px #feec85,
-            -20px -20px 40px #ffae34,
-            20px -40px 50px #ec760c,
-            -20px -60px 60px #cd4606,
-            0 -80px 70px #973716,
-            10px -90px 80px #451b0e;
-        /*box-shadow: 5px 5px 5px 5px rgba(160, 157, 163, 0.25);*/
-    }
-    input{
-        background-color:rgba(255,255,255,0.5);
-        border-radius: 15px;
-        border:0ch;
-        outline:none;
-        box-shadow: 5px 5px rgba(160, 157, 163, 0.25);
-        text-align: right;
-    }
-    input:active{
-        box-shadow: 3px 3px rgba(160, 157, 163, 0.25);
-        transform: translateY(3px);
-        transform: translateX(2px);
-    }
-    #username{
-        position:absolute;
-        top:20%;
-        left:25%;
-        right:25%;
-        height:33%
-    }
-    #username input{
-        height:30%;
-        width:60%;
-    }
-    #password{
-        position:absolute;
-        top:40%;
-        left:25%;
-        right:25%;
-        height:33%
-    }
-    #password input{
-        height:30%;
-        width:60%;
-    }
-    #btn{
-        position:absolute;
-        top:70%;
-        left:25%;
-        right:25%;
-        height:33%
-    }
-    #btn input{
-        height:30%;
-        width:30%;
-        text-align: center;
-        color:rgb(6, 4, 12);
-        background-color:rgba(255, 255, 255, 0.733);
-    }
-    #sb{
-        position:absolute;
-        left:0%;
-    }
-    #rt{
-        position:absolute;
-        right:8%;
-    }
-    #foot{
-        position:absolute;
-        bottom: 5%;
-        right: 5%;
-    }
-    #hello{
-        position:absolute;
-        bottom: 5%;
-        left:5%;
-        height:15%;
-        width:15%;
-        font-size: 200%;
-    }
-</style>
-<script>
-    $(document).ready(function(){
-        var time = 10000;
-        var x = 5;
-        var y = 5;
-        const min_x = 5;
-        const min_y = 5;
-        const max_x = 95;
-        const max_y = 95;
-        var k = 2.8;
-        // rl代表向左还是向右
-        var rl = 'right';
-        while (time > 0){
-            var dot1_x = 0;
-            var dot1_y = -1 * k * x + y;
-            var dot2_x = max_x;
-            var dot2_y = k * (max_x - x) + y;
-            var dot3_x = -1 * y / k + x;
-            var dot3_y = 0;
-            var dot4_x = (max_y - y) / k + x;
-            var dot4_y = max_y;
-            var xx = x;
-            var yy = y;
-            if(k>0 && rl=="right"){
-                if(dot2_y<max_y){
-                    x = dot2_x;
-                    y = dot2_y;
-                    rl = "left"
-                }
-                else if(dot4_x<max_x){
-                    x = dot4_x;
-                    y = dot4_y;
-                }
+    <!-- 引入 jQuery Mobile 库 -->
+    <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        $(document).ready(
+            function(){
+                $("#calculate").on("tap", function(){
+                    try{
+                        $("#answer").val(eval($("#input").val()));
+                    }
+                    catch(error){
+                        $("#answer").val(error);
+                    }
+                });
+                $('#backspace').on("tap", function(){
+                    $('#input').val($('#input').val().slice(0, -1))
+                });
+                $("#clear").on("tap", function(){
+                    $("#answer").val('');
+                    $("#input").val('');
+                });
+                $("#1").on("tap", function(){
+                    $("#input").val($("#input").val() + '1');
+                });
+                $("#2").on("tap", function(){
+                    $("#input").val($("#input").val() + '2');
+                });
+                $("#3").on("tap", function(){
+                    $("#input").val($("#input").val() + '3');
+                });
+                $("#4").on("tap", function(){
+                    $("#input").val($("#input").val() + '4');
+                });
+                $("#5").on("tap", function(){
+                    $("#input").val($("#input").val() + '5');
+                });
+                $("#6").on("tap", function(){
+                    $("#input").val($("#input").val() + '6');
+                });
+                $("#7").on("tap", function(){
+                    $("#input").val($("#input").val() + '7');
+                });
+                $("#8").on("tap", function(){
+                    $("#input").val($("#input").val() + '8');
+                });
+                $("#9").on("tap", function(){
+                    $("#input").val($("#input").val() + '9');
+                });
+                $("#0").on("tap", function(){
+                    $("#input").val($("#input").val() + '0');
+                });
+                $("#add").on("tap", function(){
+                    $("#input").val($("#input").val() + '+');
+                });
+                $("#minus").on("tap", function(){
+                    $("#input").val($("#input").val() + '-');
+                });
+                $("#multiply").on("tap", function(){
+                    $("#input").val($("#input").val() + '*');
+                });
+                $("#divide").on("tap", function(){
+                    $("#input").val($("#input").val() + '/');
+                });
+                $("#dot").on("tap", function(){
+                    $("#input").val($("#input").val() + '.');
+                });
+                $("#brackets1").on("tap", function(){
+                    $("#input").val($("#input").val() + '(');
+                });
+                $("#brackets2").on("tap", function(){
+                    $("#input").val($("#input").val() + ')');
+                });
+                $("#power").on("tap", function(){
+                    $("#input").val($("#input").val() + '**');
+                });
+                $("#00").on("tap", function(){
+                    $("#input").val($("#input").val() + '00');
+                });
+                $("#000").on("tap", function(){
+                    $("#input").val($("#input").val() + '000');
+                });
             }
-            else if(k>0 && rl=="left"){
-                if(dot1_y>min_y){
-                    x = dot1_x;
-                    y = dot1_y;
-                    rl = "right"
-                }
-                else if(dot3_x>min_x){
-                    x = dot3_x;
-                    y = dot3_y;
-                }
-            }
-            else if(k<0 && rl=="right"){
-                if(dot2_y>min_y){
-                    x = dot2_x;
-                    y = dot2_y;
-                    rl = "left"
-                }
-                else if(dot3_x<max_x){
-                    x = dot3_x;
-                    y = dot3_y;
-                }
-            }
-            else if(k<0 && rl=="left"){
-                if(dot1_y<max_y){
-                    x = dot1_x;
-                    y = dot1_y;
-                    rl = "right"
-                }
-                else if(dot4_x>min_x){
-                    x = dot4_x;
-                    y = dot4_y;
-                }
-            }
-            k *= -1
-            var len = ((xx - x) ** 2 + (yy - y) ** 2) ** 0.5
-            $('#hello').animate({
-                position:'absolute',
-                bottom: String(y) + '%',
-                left:String(x) + '%',
-                height:'5%',
-                width:'5%'
-            }, 3000);
-            time -= 1;
+        );
+    </script>
+    <style>
+        #home{
+            background-color:rgb(245, 245, 220);
         }
-        $('#hello').animate({
-                position:'absolute',
-                bottom: '5%',
-                left:'5%',
-                height:'5%',
-                width:'5%'
-            }, 3000);
-    });
-</script>
+        #head{
+            background-color:rgb(219, 231, 113);
+        }
+        #content p, #home div h1, #foot center button{
+            font-size: large;
+            color:black;
+            font-weight: 500;
+        }
+        #bt div button:hover, #foot center button:hover, #content input:hover{
+            background-color:yellowgreen;
+        }
+        #foot{
+            background-color:rgb(219, 231, 113);
+        }
+    </style>
+</head>
 <body>
-    <div id="all">
-        <div id="head">
-            WELECOME TO 5-2-2-8!
+    <div id="home" data-role="page">
+        <div data-role="header" id="head">
+            <h1>
+                MIAOMIAO_CALCULATER v2.0
+            </h1>
         </div>
-        <form id="form">
-            <div id="username">
-                <label for="txt">USER NAME:&nbsp;&nbsp;&nbsp;</label> 
-                <input type="text" id="txt">
+        <div data-role="content" id="content">
+            <p>计算过程：</p>
+            <input type="text" id="input">
+            <p>计算结果：</p>
+            <input type="text" id="answer">
+            <div class="ui-grid-c" id="bt">
+                <div class="ui-block-a">
+                    <button id="1"> 1 </button>
+                </div>
+                <div class="ui-block-b">
+                    <button id="2"> 2 </button>
+                </div>
+                <div class="ui-block-c">
+                    <button id="3"> 3 </button>
+                </div>
+                <div class="ui-block-d">
+                    <button id="add"> + </button>
+                </div>
+
+                <div class="ui-block-a">
+                    <button id="4"> 4 </button>
+                </div>
+                <div class="ui-block-b">
+                    <button id="5"> 5 </button>
+                </div>
+                <div class="ui-block-c">
+                    <button id="6"> 6 </button>
+                </div>
+                <div class="ui-block-d">
+                    <button id="minus"> - </button>
+                </div>
+
+                <div class="ui-block-a">
+                    <button id="7"> 7 </button>
+                </div>
+                <div class="ui-block-b">
+                    <button id="8"> 8 </button>
+                </div>
+                <div class="ui-block-c">
+                    <button id="9"> 9 </button>
+                </div>
+                <div class="ui-block-d">
+                    <button id="multiply"> * </button>
+                </div>
+
+                <div class="ui-block-a">
+                    <button id="0"> 0 </button>
+                </div>
+                <div class="ui-block-b">
+                    <button id="00"> 00 </button>
+                </div>
+                <div class="ui-block-c">
+                    <button id="dot"> . </button>
+                </div>
+                <div class="ui-block-d">
+                    <button id="power"> ** </button>
+                </div>
+
+                <div class="ui-block-a">
+                    <button id="000"> 000 </button>
+                </div>
+                <div class="ui-block-b">
+                    <button id="divide"> / </button>
+                </div>
+                <div class="ui-block-c">
+                    <button id="brackets1"> ( </button>
+                </div>
+                <div class="ui-block-d">
+                    <button id="brackets2"> ) </button>
+                </div>
             </div>
-            <div id="password">
-                <label for="pd">PASSWORDS:&nbsp;&nbsp;</label>
-                <input type="password" id="pd">
-            </div>
-            <div id="btn">
-                <input type="submit" value="LOG IN" id="sb">
-                <input type="reset"  value="CLEAR" id="rt">
-            </div>
-        </form>
-        <div id="foot">
-            THIS IS OUR HOME :)
         </div>
-        <div id="hello">
-            hello
+        <div data-role="footer" id="foot">
+            <center>
+            <button data-inline="true" class="ui-btn ui-corner-all" id="calculate">
+                calculate
+            </button>
+            <button data-inline="true" class="ui-btn ui-corner-all" id="clear">
+                clear
+            </button>
+            <button data-inline="true" class="ui-btn ui-corner-all" id="backspace">
+                backspace
+            </button>
+            </center>
         </div>
     </div>
 </body>

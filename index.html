@@ -1,211 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miaomiao_calculater v2.0</title>
-
-    <!-- CDN-->
+    <title>index</title>
     <!-- 引入 jQuery Mobile 样式 -->
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./jquery/jquery.mobile-1.4.5.min.css">
     <!-- 引入 jQuery 库 -->
-    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./jquery/jquery-1.10.2.min.js"></script>
     <!-- 引入 jQuery Mobile 库 -->
-    <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-    <script>
-        $(document).ready(
-            function(){
-                $("#calculate").on("tap", function(){
-                    try{
-                        $("#answer").val(eval($("#input").val()));
-                    }
-                    catch(error){
-                        $("#answer").val(error);
-                    }
-                });
-                $('#backspace').on("tap", function(){
-                    $('#input').val($('#input').val().slice(0, -1))
-                });
-                $("#clear").on("tap", function(){
-                    $("#answer").val('');
-                    $("#input").val('');
-                });
-                $("#1").on("tap", function(){
-                    $("#input").val($("#input").val() + '1');
-                });
-                $("#2").on("tap", function(){
-                    $("#input").val($("#input").val() + '2');
-                });
-                $("#3").on("tap", function(){
-                    $("#input").val($("#input").val() + '3');
-                });
-                $("#4").on("tap", function(){
-                    $("#input").val($("#input").val() + '4');
-                });
-                $("#5").on("tap", function(){
-                    $("#input").val($("#input").val() + '5');
-                });
-                $("#6").on("tap", function(){
-                    $("#input").val($("#input").val() + '6');
-                });
-                $("#7").on("tap", function(){
-                    $("#input").val($("#input").val() + '7');
-                });
-                $("#8").on("tap", function(){
-                    $("#input").val($("#input").val() + '8');
-                });
-                $("#9").on("tap", function(){
-                    $("#input").val($("#input").val() + '9');
-                });
-                $("#0").on("tap", function(){
-                    $("#input").val($("#input").val() + '0');
-                });
-                $("#add").on("tap", function(){
-                    $("#input").val($("#input").val() + '+');
-                });
-                $("#minus").on("tap", function(){
-                    $("#input").val($("#input").val() + '-');
-                });
-                $("#multiply").on("tap", function(){
-                    $("#input").val($("#input").val() + '*');
-                });
-                $("#divide").on("tap", function(){
-                    $("#input").val($("#input").val() + '/');
-                });
-                $("#dot").on("tap", function(){
-                    $("#input").val($("#input").val() + '.');
-                });
-                $("#brackets1").on("tap", function(){
-                    $("#input").val($("#input").val() + '(');
-                });
-                $("#brackets2").on("tap", function(){
-                    $("#input").val($("#input").val() + ')');
-                });
-                $("#power").on("tap", function(){
-                    $("#input").val($("#input").val() + '**');
-                });
-                $("#00").on("tap", function(){
-                    $("#input").val($("#input").val() + '00');
-                });
-                $("#000").on("tap", function(){
-                    $("#input").val($("#input").val() + '000');
-                });
-            }
-        );
-    </script>
+    <script src="./jquery/jquery.mobile-1.4.5.min.js"></script>
+    <!-- 导入总css-->
+    <link rel="stylesheet" href="./css/all_html.css">
     <style>
-        #home{
-            background-color:rgb(245, 245, 220);
-        }
-        #head{
-            background-color:rgb(219, 231, 113);
-        }
-        #content p, #home div h1, #foot center button{
-            font-size: large;
-            color:black;
-            font-weight: 500;
-        }
-        #bt div button:hover, #foot center button:hover, #content input:hover{
-            background-color:yellowgreen;
-        }
-        #foot{
-            background-color:rgb(219, 231, 113);
+        #footer{
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div id="home" data-role="page">
-        <div data-role="header" id="head">
-            <h1>
-                MIAOMIAO_CALCULATER v2.0
-            </h1>
+    <div data-role="page" id="page">
+        <div data-role="header" id="header">
+            <a href="./index.html" class="ui-btn ui-icon-home ui-btn-icon-left ui-shadow">主页</a>
+            <h1>欢迎来到miaomiao的网站!</h1>
+            <a href="#panel" class="ui-btn ui-btn-inline">打开导航</a>
         </div>
         <div data-role="content" id="content">
-            <p>计算过程：</p>
-            <input type="text" id="input">
-            <p>计算结果：</p>
-            <input type="text" id="answer">
-            <div class="ui-grid-c" id="bt">
-                <div class="ui-block-a">
-                    <button id="1"> 1 </button>
-                </div>
-                <div class="ui-block-b">
-                    <button id="2"> 2 </button>
-                </div>
-                <div class="ui-block-c">
-                    <button id="3"> 3 </button>
-                </div>
-                <div class="ui-block-d">
-                    <button id="add"> + </button>
-                </div>
-
-                <div class="ui-block-a">
-                    <button id="4"> 4 </button>
-                </div>
-                <div class="ui-block-b">
-                    <button id="5"> 5 </button>
-                </div>
-                <div class="ui-block-c">
-                    <button id="6"> 6 </button>
-                </div>
-                <div class="ui-block-d">
-                    <button id="minus"> - </button>
-                </div>
-
-                <div class="ui-block-a">
-                    <button id="7"> 7 </button>
-                </div>
-                <div class="ui-block-b">
-                    <button id="8"> 8 </button>
-                </div>
-                <div class="ui-block-c">
-                    <button id="9"> 9 </button>
-                </div>
-                <div class="ui-block-d">
-                    <button id="multiply"> * </button>
-                </div>
-
-                <div class="ui-block-a">
-                    <button id="0"> 0 </button>
-                </div>
-                <div class="ui-block-b">
-                    <button id="00"> 00 </button>
-                </div>
-                <div class="ui-block-c">
-                    <button id="dot"> . </button>
-                </div>
-                <div class="ui-block-d">
-                    <button id="power"> ** </button>
-                </div>
-
-                <div class="ui-block-a">
-                    <button id="000"> 000 </button>
-                </div>
-                <div class="ui-block-b">
-                    <button id="divide"> / </button>
-                </div>
-                <div class="ui-block-c">
-                    <button id="brackets1"> ( </button>
-                </div>
-                <div class="ui-block-d">
-                    <button id="brackets2"> ) </button>
-                </div>
+            <div data-role="collapsible">
+                <h1>工具盒</h1>
+                <a href="./calculater_v2.0.html">计算器 v2.0</a>
             </div>
         </div>
-        <div data-role="footer" id="foot">
-            <center>
-            <button data-inline="true" class="ui-btn ui-corner-all" id="calculate">
-                calculate
-            </button>
-            <button data-inline="true" class="ui-btn ui-corner-all" id="clear">
-                clear
-            </button>
-            <button data-inline="true" class="ui-btn ui-corner-all" id="backspace">
-                backspace
-            </button>
-            </center>
+        <div data-role="footer" id="footer">
+            <a href="https://mail.qq.com/" class="ui-btn ui-shadow ui-icon-mail ui-btn-icon-left">
+                e-mail:2952310350@qq.com
+            </a>
+        </div>
+        <div data-role="panel" id="panel">
+            <h1>看我干啥</h1>
+            <p>啥也没有..</p>
         </div>
     </div>
 </body>

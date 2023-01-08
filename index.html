@@ -34,15 +34,21 @@
     
     <style>
         :root {
-        /* 定义全局变量，使用var(变量名)获取变量，例如var(--theme-accent-color) */
-        /* 设置强调色 */
-        --theme-accent-color: #ff6161;
-        /* 设置间隔符颜色 */
-        --theme-pipe-color: rgb(255, 76, 82)
+            /* 定义全局变量，使用var(变量名)获取变量，例如var(--theme-accent-color) */
+            /* 设置强调色 */
+            --theme-accent-color: #ff6161;
+            /* 设置间隔符颜色 */
+            --theme-pipe-color: rgb(255, 76, 82);
         }
         /* 首屏图片 */
         .hero-section {
-        background-image: url("./pic/hero_section/hero_section_3.jpg")
+            background-image: url("./pic/hero_section/hero_section_3.jpg");
+        }
+        /* 检测手机 */
+        @media screen and (max-device-aspect-ratio: 1){
+            .hero-section {
+                background-image: url("./pic/hero_section/hero_section_4.jpg");
+        }
         }
     </style>
 </head>

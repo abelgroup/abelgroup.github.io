@@ -1,80 +1,268 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-    <!-- 引入 jQuery Mobile 样式 -->
-    <link rel="stylesheet" href="./jquery/jquery.mobile-1.4.5.min.css">
-    <!-- 引入 jQuery 库 -->
-    <script src="./jquery/jquery-1.10.2.min.js"></script>
-    <!-- 引入 jQuery Mobile 库 -->
-    <script src="./jquery/jquery.mobile-1.4.5.min.js"></script>
-    <!-- 导入总css-->
-    <link rel="stylesheet" href="./css/all_html.css">
-</head>
-<body>
-    <div data-role="page" id="page">
+    <meta name="description" content="b站教育资源收藏网站" lang="zh-CN">
+    <meta name="keywords" content="学习,bilibili,哔哩哔哩,学习资源,各年级,教学视频" lang="zh-CN">
+    <title>bilibili教育资源收藏夹</title>
 
-        <style>
-            #center{
-                text-align: center;
-            }
-            #move{
-                position: absolute;
-                left:0%;
-                width:auto;
-                top:2.2%;
-                height:auto;
-            }
-        </style>
-        <!-- 修正高度-->
-        <script src="./js/height.js"></script>
-        <script>
-            $(document).ready(
-                function(){
-                    const speed = 8000;
-                    var times = 10000;
-                    while(times>0){
-                        $('#move').animate({
-                            'left':'10%'
-                        }, speed);
-                        $('#move').animate({
-                            'left':'80%'
-                        }, speed);
-                        times --;
-                    }
-                    $('#move').animate({
-                            'left':'10%'
-                        }, speed);
-                }
-            );
-        </script>
-        
-        <div data-role="header" id="header" data-position="fixed">
-            <a href="./index.html" class="ui-btn ui-icon-home ui-btn-icon-left ui-shadow">主页</a>
-            <h1>欢迎来到miaomiao的网站!</h1>
-            <a href="#panel" class="ui-btn">打开导航</a>
-        </div>
-        <div data-role="content" id="content">
-            <div id="move">Tips:遇见bug不要慌,刷新一下解难题。</div>
-            <br>
-            <div data-role="collapsible">
-                <h1>工具盒</h1>
-                <a href="./calculater_v2.0.html">计算器 v2.0</a>
+    <!-- 网页导航条logo -->
+    <link rel="icon" href="./pic/logo/logo_2.png" type="image/png">
+    <!-- 添加各种外部库 -->
+    <!-- css: -->
+    <!-- jQuery Magnific Popup -->
+    <link rel="stylesheet" href="./css/magnific_popup.css" type="text/css">
+    <!-- 在此添加字体 -->
+    <!-- <link rel="stylesheet" href="./" type="text/css"> -->
+    <!-- Lektor-Icon Theme CSS -->
+    <link rel="stylesheet" href="./css/lektor_icon_theme.css" type="text/css">
+    <!-- myCSS -->
+    <link rel="stylesheet" href="./css/mycss.css" type="text/css">
+    <!-- js: -->
+    <!-- jQuery -->
+    <script src="./js/jQuery_3.3.1.js" type="application/javascript" charset="UTF-8"></script>
+    <!-- jQuery Waypoints -->
+    <script src="./js/jQuery_waypoints.js" type="application/javascript" charset="UTF-8"></script>
+    <!-- jQuery Easing -->
+    <script src="./js/jQuery_easing.js" type="application/javascript" charset="UTF-8"></script>
+    <!-- jQuery Stellar Parallax -->
+    <script src="./js/jQuery_Stellar.js" type="application/javascript" charset="UTF-8"></script>
+    <!-- jQuery Magnific Popup -->
+    <script src="./js/jQuery_magnific_popup.js" type="application/javascript" charset="UTF-8"></script>
+    <script src="./js/jQuery_magnific_popup_options.js" type="application/javascript" charset="UTF-8"></script>
+    <!-- Lektor-Icon Theme JS -->
+    <script src="./js/lektor_icon_theme.js" type="application/javascript" charset="UTF-8"></script>
+    <!-- Lektor-Icon Theme JS -->
+    <script src="./js/lektor_icon_theme_2.js" type="application/javascript" charset="UTF-8"></script>
+    
+    <style>
+        :root {
+        /* 定义全局变量，使用var(变量名)获取变量，例如var(--theme-accent-color) */
+        --theme-accent-color: #ff6161;
+        --theme-pipe-color: rgb(255, 76, 82)
+        }
+        /* 首屏图片 */
+        .hero-section {
+            background-image: url("./pic/hero_section/hero_section_3.jpg")
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fh5co-loader"></div>
+
+    <div class="fh5co-page">
+        <div id="fh5co-container">
+
+            <!-- 首屏 -->
+            <div class="js-sticky">
+                <div class="fh5co-main-nav navbar fixed-top">
+                    <div class="container">
+                        <div class="fh5co-menu-1">
+
+                            <div class='pull-left'>
+                                <ul class='dropdown menu'>
+                                    <li id='menu-logo'>
+                                        <p></p>
+                                        <a href='./'>
+                                            <!-- logo -->
+                                            <img alt="Site Logo" src="./PIC/logo/logo_2.png">
+                                            <span class="logo-text-container">
+                                            <span class="logo-text">
+                                                bilibili教育资源收藏夹
+                                            </span>
+                                            </span>
+                                        </a>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 网页上端导航条 -->
+                            <div class="main-nav-container">
+                                <a href="#section-home" data-nav-section="home">
+                                    网站首页
+                                </a>
+                                <a href="#section-introduction" data-nav-section="introduction">
+                                    网站介绍
+                                </a>
+                                <a href="#section-characteristics" data-nav-section="characteristics">
+                                    网站特点
+                                </a>
+                                <a href="#section-foot" data-nav-section="foot">
+                                    联系我们
+                                </a> 
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div data-role="footer" id="footer" data-position="fixed">
-            <div id="center">
-                <a href="https://mail.qq.com/" class="ui-btn ui-shadow ui-icon-mail ui-btn-icon-left">
-                    e-mail:2952310350@qq.com
-                </a>
+
+            <!-- 存放首屏图片 -->
+            <div id="section-home" class="js-fullheight-home hero-section" data-section="home" data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="col-md-6">
+                        <div class="js-fullheight-home fh5co-copy">
+                            <div class="js-fullheight-home fh5co-copy-inner">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- 首屏 -->
+
+            <!-- 主要内容 -->
+            <div id="section-introduction" data-section="introduction" class="content-section body-section light-bg-section">
+                
+                <div class="text-center fh5co-heading">
+                    <h2>
+                        网站介绍
+                    </h2>
+                    <p>
+                        一个致力于收集B站上所有教育资源的收藏夹网站
+                    </p>
+                </div>
+                
+                <div class="center">
+                    <p>
+                        本站中文名称：<em>bilibili教育资源收藏夹</em>，英文名称：<em>bilearn</em>。
+                        本站是一个资源收集网站本，努力与收集B站上所有教育资源。
+                    </p>
+                    <p>
+                        本站的建立者--我们，是山东师范大学教育学部电教本2001的四位男生，要相联系我们
+                        请点击网页上方的“联系我们”。要想立即查询，请进入本站。
+                    </p>
+                    <p>
+                        <center>点击下方按钮进入本站:</center>
+                    </p>
+                </div>
+
+                <div class="row">
+                    <!-- 跳转目录页 -->
+                    <a href="./"  class="content-button text-button" target="_blank" rel="noopener noreferrer">
+                        进入本站
+                    </a>
+                </div>
+
             </div>
-        </div>
-        <div data-role="panel" id="panel">
-            <h1>看我干啥</h1>
-            <p>啥也没有..</p>
+            <!-- 主要内容 -->
+
+            <!-- 介绍 -->
+            <div id="section-characteristics" data-section="characteristics" class="services-section body-section dark-bg-section">
+                
+                <div class="text-center fh5co-heading">
+                    <h2>
+                        网站特点
+                    </h2>
+                </div>
+            
+                <div class="container">
+
+                    <!-- 卡片1 -->
+                    <div class="col-md-4 card-outer">
+                        <div class="card service">
+                            <div class="card-inner">
+                                <div class="icon"></div>
+                                <!-- 在此添加标题 -->
+                                <h3>
+                                    标题1
+                                </h3>
+                                <!-- 在此添加正文 -->
+                                <p>
+                                    特点1...
+                                </p>
+                            </div>
+                            <div class="card-spacer"></div>
+                        </div>
+                    </div>
+
+                    <!-- 卡片2 -->
+                    <div class="col-md-4 card-outer">
+                        <div class="card service">
+                            <div class="card-inner">
+                                <div class="icon"></div>
+                                <!-- 在此添加标题 -->
+                                <h3>
+                                    标题2
+                                </h3>
+                                <!-- 在此添加正文 -->
+                                <p>
+                                    特点2...
+                                </p>
+                            </div>
+                            <div class="card-spacer"></div>
+                        </div>
+                    </div>
+                
+                    <!-- 卡片3 -->
+                    <div class="col-md-4 card-outer">
+                        <div class="card service">
+                            <div class="card-inner">
+                                <!-- 在此添加标题 -->
+                                <h3>
+                                    标题3
+                                </h3>
+                                <!-- 在此添加正文 -->
+                                <p>
+                                    特点3...
+                                </p>
+                            </div>
+                            <div class="card-spacer"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- 介绍 -->
+
+            <!-- 末尾信息 -->
+            <div id="fh5co-footer">
+                <div class="container">
+                    
+                    <div class="row footer-connect-line">
+                        <div class="text-center">
+                            <p>
+                                如何联系我们:
+                                <a href="https://mail.qq.com/"> QQ-mail </a>
+                                <span class="pipe-colored"> | </span>
+                                <a href="https://github.com/abelgroup"> 站长的Github </a>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="row footer-connect-line" id="section-foot" data-section="foot">
+                        <div class="text-center">
+                            <p>
+                                制作小组:
+                                <a href="2952310350@qq.com">
+                                    miao_miao
+                                </a>
+                                <span class="pipe-colored"> | </span> 
+                                <a href="1917352431@qq.com">
+                                    tao_one
+                                </a>
+                                <span class="pipe-colored"> | </span> 
+                                <a href="2498363013@qq.com">
+                                    MR.quan
+                                </a>
+                                <span class="pipe-colored"> | </span> 
+                                <a href="3071723667@qq.com">
+                                    caiqi
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 末尾 -->
+
         </div>
     </div>
 </body>

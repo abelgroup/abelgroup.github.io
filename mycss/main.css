@@ -1,0 +1,72 @@
+*{
+    /* 全局字体 */
+    font-family: 'Microsoft JhengHei', 'STHeiti', 'SimHei';
+    
+    /* 自定义鼠标 */
+    cursor: url('../Pic/cursor/cursor.ico'), auto !important;
+}
+/* 导航条颜色 */
+nav.navbar{
+    background-color: rgb(255, 248, 255) !important;
+}
+/* 右侧导航文字颜色 */
+ul.nav-pills>li>div{
+    color: rgb(0, 0, 0) !important;
+}
+/* 底部文字颜色 */
+ul.navbar-nav>li>div{
+    color: rgb(0, 0, 0) !important;
+}
+/* 右侧导航按钮激活属性 */
+ul.nav-pills>li>div.active{
+    color: rgb(255, 255, 255) !important;
+    background-color: #FF80AB !important;
+    font-weight:900;
+}
+/* 遮盖颜色 */
+ul.nav-pills>li>div.active:hover{
+    background-color: #f66092 !important;
+}
+.shadow{
+    box-shadow: 2px 2px 10px rgba(0, 0, 0) inset;
+}
+p{
+    line-height:30px;
+    font-size: larger;
+}
+/* 按钮 */
+.btn{
+    background-color: #FF80AB;
+    font-size: 200%;
+    border-radius: 5%;
+    color: rgb(255, 255, 255);
+    height: 50%;
+}
+.btn:hover{
+    background-color: #fe3e7e;
+    color: rgb(255, 255, 255);
+    font-size: 220%;
+}
+/* 卡片 */
+.card{
+    width: 80%;
+}
+.card-body{
+    height: auto;
+}
+.card:hover{
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.card-body>h2{
+    color: #FF80AB;
+    text-shadow: 2px 2px #fff6f6, 3px 3px #fe3e7e;
+}
+.card-header, .card-footer{
+    color: #fe3e7e;
+}
+.pipe-colored{
+    color: rgb(255, 0, 0)e7e;
+}
+#toqq:hover, #tomygithub:hover{
+    color: #fe3e7e !important;
+}

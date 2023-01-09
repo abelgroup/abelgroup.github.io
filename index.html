@@ -3,262 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="b站教育资源收藏网站" lang="zh-CN">
-    <meta name="keywords" content="学习,bilibili,哔哩哔哩,学习资源,各年级,教学视频" lang="zh-CN">
-    <title>bilibili教育资源收藏夹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- 网页导航条logo -->
-    <link rel="icon" href="./pic/logo/logo_2.png" type="image/png">
+    <title>Blilearn教育资源收藏夹欢迎您!</title>
 
-    <!-- CSS: -->
-    <!-- jQuery Magnific Popup CSS -->
-    <link rel="stylesheet" href="./css/magnific_popup.css" type="text/css">
-    <!-- Lektor-Icon Theme CSS -->
-    <link rel="stylesheet" href="./css/lektor_icon_theme.css" type="text/css">
+    <!-- 新 Bootstrap5 核心 CSS 文件 -->
+    <link rel="stylesheet" href="./Bootstrap5/bootstrap.min.css">
 
-    <!-- JS: -->
     <!-- jQuery -->
-    <script src="./js/jQuery_3.3.1.js" type="application/javascript" charset="UTF-8"></script>
-    <!-- jQuery Waypoints -->
-    <script src="./js/jQuery_waypoints.js" type="application/javascript" charset="UTF-8"></script>
-    <!-- jQuery Easing -->
-    <script src="./js/jQuery_easing.js" type="application/javascript" charset="UTF-8"></script>
-    <!-- jQuery Stellar Parallax -->
-    <script src="./js/jQuery_Stellar.js" type="application/javascript" charset="UTF-8"></script>
-    <!-- jQuery Magnific Popup -->
-    <script src="./js/jQuery_magnific_popup.js" type="application/javascript" charset="UTF-8"></script>
-    <script src="./js/jQuery_magnific_popup_options.js" type="application/javascript" charset="UTF-8"></script>
-    <!-- Lektor-Icon Theme JS -->
-    <script src="./js/lektor_icon_theme.js" type="application/javascript" charset="UTF-8"></script>
-    
-    <style>
-        :root {
-            /* 定义全局变量，使用var(变量名)获取变量，例如var(--theme-accent-color) */
-            /* 设置强调色 */
-            --theme-accent-color: #ff6161;
-            /* 设置间隔符颜色 */
-            --theme-pipe-color: rgb(255, 76, 82);
-        }
-        /* 首屏图片 */
-        .hero-section {
-            background-image: url("./pic/hero_section/hero_section_3.jpg");
-        }
-        /* 检测手机 */
-        @media screen and (max-device-aspect-ratio: 1){
-            .hero-section {
-                background-image: url("./pic/hero_section/hero_section_4.jpg");
-        }
-        }
-    </style>
-</head>
+    <script src="./jQuery/jquery-1.10.2.min.js"></script>
 
+    <!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="./Bootstrap5/popper.min.js"></script>
+
+    <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+    <script src="./Bootstrap5/bootstrap.min.js"></script>
+
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="./mycss/main.css">
+
+    <!-- 自定义js -->
+    <script src="./myjs/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // 顶部导航的跳转
+            web_trans("#tohome", './index.html#home');
+            web_trans("#tointroduction", './index.html#introduction');
+            web_trans("#tocharacteristic", './index.html#characteristic');
+            web_trans("#toauthor", './index.html#author');
+            web_trans("#tofoot", './index.html#foot');
+            web_trans("#toqq", 'https://mail.qq.com');
+            web_trans("#tomygithub", 'https://github.com/abelgroup');
+            // 点击进入年级页面根目录
+            web_trans("#togradeindex", './WEB/Grade/grade_index.html');
+        });
+    </script>
+
+</head>
 <body>
 
-    <div class="fh5co-loader"></div>
-
-    <div class="fh5co-page">
-        <div id="fh5co-container">
-
-            <!-- 首屏 -->
-            <div class="js-sticky">
-                <div class="fh5co-main-nav navbar fixed-top">
-                    <div class="container">
-                        <div class="fh5co-menu-1">
-
-                            <div class='pull-left'>
-                                <ul class='dropdown menu'>
-                                    <li id='menu-logo'>
-                                        <p></p>
-                                        <a href='./'>
-                                            <!-- logo有时候不显示，在此可以开启 -->
-                                            <!-- <img alt="logo" src="./PIC/logo/logo_2.png"> -->
-                                            <span class="logo-text-container">
-                                            <span class="logo-text">
-                                                bilearn教育资源收藏夹
-                                            </span>
-                                            </span>
-                                        </a>
-                                        <p></p>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- 网页上端导航条 -->
-                            <div class="main-nav-container">
-                                <a href="#section-home" data-nav-section="home">
-                                    网站首页
-                                </a>
-                                <a href="#section-introduction" data-nav-section="introduction">
-                                    网站介绍
-                                </a>
-                                <a href="#section-characteristics" data-nav-section="characteristics">
-                                    网站特点
-                                </a>
-                                <a href="#section-foot" data-nav-section="foot">
-                                    联系我们
-                                </a> 
-                            </div>
-
-                        </div>
+    <!-- 导航栏 -->
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+            <!-- 左侧logo -->
+            <a href="./index.html" class="d-flex align-items-center me-md-auto text-dark text-decoration-none px-md-4">
+                <img decoding="async" src="./Pic/logo/logo_3.png" alt="logo" width="108" height="48">
+                <span class="fs-4 px-md-2">
+                    教育资源收藏夹
+                </span>
+            </a>
+            <!-- 右侧导航 -->
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <div class="nav-link active" data-bs-toggle="pill" id="tohome">
+                        网站首页
                     </div>
-                </div>
-            </div>
-
-            <!-- 此div块背景为首屏图片 -->
-            <div id="section-home" class="js-fullheight-home hero-section" data-section="home" data-stellar-background-ratio="0.5">
-            </div> 
-            <!-- 首屏 -->
-
-            <!-- 主要内容 -->
-            <div id="section-introduction" data-section="introduction" class="content-section body-section light-bg-section">
-                
-                <div class="text-center fh5co-heading">
-                    <h2>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-bs-toggle="pill" id="tointroduction">
                         网站介绍
-                    </h2>
-                    <p>
-                        一个致力于收集B站上所有教育资源的收藏夹网站
-                    </p>
-                </div>
-                
-                <div class="center">
-                    <p>
-                        本站中文名称：<em>bilibili教育资源收藏夹</em>，英文名称：<em>bilearn</em>。
-                        本站是一个资源收集网站本，努力与收集B站上所有教育资源。
-                    </p>
-                    <p>
-                        本站的建立者--我们，是山东师范大学教育学部电教本2001的四位男生，要相联系我们
-                        请点击网页上方的“联系我们”。要想立即查询，请进入本站。
-                    </p>
-                    <p>
-                        <center>点击下方按钮进入本站:</center>
-                    </p>
-                </div>
-
-                <div class="row">
-                    <!-- 跳转目录页 -->
-                    <a href="./"  class="content-button text-button" target="_blank" rel="noopener noreferrer">
-                        进入本站
-                    </a>
-                </div>
-
-            </div>
-            <!-- 主要内容 -->
-
-            <!-- 介绍 -->
-            <div id="section-characteristics" data-section="characteristics" class="services-section body-section dark-bg-section">
-                
-                <div class="text-center fh5co-heading">
-                    <h2>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-bs-toggle="pill" id="tocharacteristic">
                         网站特点
-                    </h2>
-                </div>
-            
-                <div class="container">
-
-                    <!-- 卡片1 -->
-                    <div class="col-md-4 card-outer">
-                        <div class="card service">
-                            <div class="card-inner">
-                                <div class="icon"></div>
-                                <!-- 在此添加标题 -->
-                                <h3>
-                                    标题1
-                                </h3>
-                                <!-- 在此添加正文 -->
-                                <p>
-                                    特点1...
-                                </p>
-                            </div>
-                            <div class="card-spacer"></div>
-                        </div>
                     </div>
-
-                    <!-- 卡片2 -->
-                    <div class="col-md-4 card-outer">
-                        <div class="card service">
-                            <div class="card-inner">
-                                <div class="icon"></div>
-                                <!-- 在此添加标题 -->
-                                <h3>
-                                    标题2
-                                </h3>
-                                <!-- 在此添加正文 -->
-                                <p>
-                                    特点2...
-                                </p>
-                            </div>
-                            <div class="card-spacer"></div>
-                        </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-bs-toggle="pill" id="toauthor">
+                        网站作者
                     </div>
-                
-                    <!-- 卡片3 -->
-                    <div class="col-md-4 card-outer">
-                        <div class="card service">
-                            <div class="card-inner">
-                                <!-- 在此添加标题 -->
-                                <h3>
-                                    标题3
-                                </h3>
-                                <!-- 在此添加正文 -->
-                                <p>
-                                    特点3...
-                                </p>
-                            </div>
-                            <div class="card-spacer"></div>
-                        </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-bs-toggle="pill" id="tofoot">
+                        联系我们
                     </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- 导航栏 -->
 
-                </div>
-
+    <!-- 轮播 -->
+    <div class="container-fluid pt-3 px-0" id="home">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+    
+            <!-- 指示符 -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
             </div>
-            <!-- 介绍 -->
-
-            <!-- 末尾信息 -->
-            <div id="fh5co-footer">
-                <div class="container">
-                    
-                    <div class="row footer-connect-line">
-                        <div class="text-center">
-                            <p>
-                                如何联系我们:
-                                <a href="https://mail.qq.com/"> QQ-mail </a>
-                                <span class="pipe-colored"> | </span>
-                                <a href="https://github.com/abelgroup"> 站长的Github </a>
-                                
-                            </p>
-                        </div>
+        
+            <!-- 轮播图片 -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img decoding="async" src="./Pic/carousel/6.jpg" class="d-block" style="width:100%;">
+                    <div class="carousel-caption">
+                        <!-- 在此插入图片内部文字 -->
                     </div>
-                    
-                    <div class="row footer-connect-line" id="section-foot" data-section="foot">
-                        <div class="text-center">
-                            <p>
-                                制作小组:
-                                <a href="mailto:2952310350@qq.com">
-                                    miao_miao
-                                </a>
-                                <span class="pipe-colored"> | </span> 
-                                <a href="mailto:1917352431@qq.com">
-                                    tao_one
-                                </a>
-                                <span class="pipe-colored"> | </span> 
-                                <a href="mailto:2498363013@qq.com">
-                                    MR.quan
-                                </a>
-                                <span class="pipe-colored"> | </span> 
-                                <a href="mailto:3071723667@qq.com">
-                                    caiqi
-                                </a>
-                            </p>
-                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img decoding="async" src="./Pic/carousel/6.jpg" class="d-block" style="width:100%;">
+                    <div class="carousel-caption">
+                        <!-- 在此插入图片内部文字 -->
                     </div>
-
+                </div>
+                <div class="carousel-item">
+                    <img decoding="async" src="./Pic/carousel/6.jpg" class="d-block" style="width:100%;">
+                    <div class="carousel-caption">
+                        <!-- 在此插入图片内部文字 -->
+                    </div>
                 </div>
             </div>
-            <!-- 末尾 -->
-
+        
+            <!-- 左右切换按钮 -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+    
         </div>
     </div>
+    <!-- 轮播 -->
+
+    <!-- 网站介绍 -->
+    <div class="containe-fluidr pt-0 px-0" id="introduction">
+        <div class="pt-0 mt-0">
+            <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+        </div>
+        <div class="py-5">
+            <center><h1><strong>网站介绍</strong></h1></center>
+            <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
+            <br>
+            <center><h4>一个致力于收集B站上所有教育资源的收藏夹网站</h4></center>
+            <br>
+            <div class="container" style="width: 60%;">
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    本站名称： bilearn教育资源收藏夹。
+                    本站是一个bilibili资源收集网站，
+                    努力于收集B站上所有有用的教育资源。
+                    无论是从小学一年级，还是高中三年级。
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    本站的建立者--我们，是山东师范大学教育学部电教本2001的四位男生，
+                    如要相联系我们，请点击网页上方的“联系我们”。
+                    如要想查看教学视频，请进入本站。
+                </p>
+                <center>--点击下方按钮进入本站--</center>
+                <center>
+                    <div class="btn mt-3" id="togradeindex">
+                        START LEARN
+                    </div>
+                </center>
+            </div>
+        </div>
+        <div class="pt-0 mt-0">
+            <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+        </div>
+    </div>
+    <!-- 网站介绍 -->
+
+    <!-- 网站特点 -->
+    <div class="containe-fluidr pt-0 px-0 bg-light" id="characteristic">
+        <div class="pt-0 mt-0">
+            <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+        </div>
+        <div class="py-5">
+            <center><h1><strong>网站特点</strong></h1></center>
+            <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
+            <br>
+            <!-- 卡片 -->
+            <div class="container-fluid px-3">
+                <center>
+                <div class="row">
+                    <div class="col">
+                        <center>
+                            <!-- 卡片1 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>
+                                        特点一
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        我是特点一。<br>
+                                        我是特点一。<br>
+                                        我是特点一。<br>
+                                        我是特点一。<br>
+                                        我是特点一。<br>
+                                        我是特点一。<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="col">
+                        <center>
+                            <!-- 卡片2 -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p>
+                                        我是特点二。<br>
+                                        我是特点二。<br>
+                                        我是特点二。<br>
+                                        我是特点二。<br>
+                                        我是特点二。<br>
+                                        我是特点二。<br>
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <h3>
+                                        特点二
+                                    </h3>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="col">
+                        <center>
+                            <!-- 卡片3 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>
+                                        特点三
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        我是特点三。<br>
+                                        我是特点三。<br>
+                                        我是特点三。<br>
+                                        我是特点三。<br>
+                                        我是特点三。<br>
+                                        我是特点三。<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>             
+                </center>
+            </div>
+        </div>
+        <div class="pt-0 mt-0">
+            <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+        </div>
+    </div>
+    <!-- 网站特点 -->
+
+    <!-- 网站作者 -->
+    <div class="containe-fluidr pt-0 px-0" id="author">
+        <div class="pt-0 mt-0">
+            <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+        </div>
+        <div class="py-5">
+            <center><h1><strong>网站作者</strong></h1></center>
+            <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
+            <br>
+            <!-- 卡片 -->
+            <div class="container-fluid px-3">
+                <center>
+                <div class="row">
+
+                    <div class="col">
+                        <center>
+                            <!-- 卡片1 -->
+                            <div class="card">
+                                <img src="./Pic/authors/miaomiao.jpg" alt="miaomiao" class="card-img-top px-1 py-1">
+                                <div class="card-body">
+                                    <h2>
+                                        MiaoMiao
+                                    </h2>
+                                    mail:2952310350@qq.com
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+
+                    <div class="col">
+                        <center>
+                            <!-- 卡片2 -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2>
+                                        陶one
+                                    </h2>
+                                    mail:1917352431@qq.com
+                                </div>
+                                <img src="./Pic/authors/tao1.jpg" alt="tao1" class="card-img-bottom px-1 py-1">
+                            </div>
+                        </center>
+                    </div>
+
+                    <div class="col">
+                        <center>
+                            <!-- 卡片3 -->
+                            <div class="card">
+                                <img src="./Pic/authors/yuquan.jpg" alt="yuquan" class="card-img-top px-1 py-1">
+                                <div class="card-body">
+                                    <h2>
+                                        玉权哥
+                                    </h2>
+                                    mail:2498363013@qq.com
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+
+                    <div class="col">
+                        <center>
+                            <!-- 卡片4 -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2>
+                                        菜菜菜埼
+                                    </h2>
+                                    mail:3071723667@qq.com 
+                                </div>
+                                <img src="./Pic/authors/caiqi.jpg" alt="caiqi" class="card-img-bottom px-1 py-1">
+                            </div>
+                        </center>
+                    </div>
+
+                </div>             
+                </center>
+            </div>
+        </div>
+        <div class="pt-0 mt-0">
+            <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+        </div>
+    </div>
+    <!-- 网站作者 -->
+
+    <!-- 联系我们 -->
+    <div class="container-fluid px-0" id="foot">
+        <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <strong>
+                            如何联系我们:
+                        </strong>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" id="toqq">
+                        QQ-mail
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" id="tomygithub">
+                        站长的Github
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- 联系我们 -->      
+
 </body>
 </html>

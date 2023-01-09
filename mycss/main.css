@@ -3,7 +3,7 @@
     font-family: 'Microsoft JhengHei', 'STHeiti', 'SimHei';
     
     /* 自定义鼠标 */
-    cursor: url('../Pic/cursor.ico'), auto !important;
+    cursor: url('https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/cursor.ico'), auto !important;
 }
 /* 导航条颜色 */
 nav.navbar{

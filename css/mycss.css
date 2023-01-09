@@ -1,0 +1,7 @@
+:root {
+    /* 定义全局变量，使用var(变量名)获取变量，例如var(--theme-accent-color) */
+    /* 设置强调色 */
+    --theme-accent-color: #ff6161;
+    /* 设置间隔符颜色 */
+    --theme-pipe-color: rgb(255, 76, 82);
+}

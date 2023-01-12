@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Blilearn教育资源收藏夹欢迎您!</title>
+    <title>Bilearn教育资源收藏夹欢迎您!</title>
 
     <!-- 新 Bootstrap5 核心 CSS 文件 -->
     <link rel="stylesheet" href="./Bootstrap5/bootstrap.min.css">
@@ -26,8 +26,36 @@
     <script src="./myjs/main.js"></script>
 
     <script>
+        // 由于github原因，图片无法显示，于是切换国内gitee仓库内图片链接
+
+        // 在此设置图片来源，是本地或者是gitee仓库，二者取其一，别忘了改mycss里的指针
+        // 本地:
+        // const pic_src = './Pic/';
+        // gitee仓库:
+        const pic_src = 'https://gitee.com/schujungle/miao/raw/master/Pic/';
+        // logo图片
+        const logo_src = pic_src + 'logo_3.png';
+        // 顶部轮播三张图片
+        const top_1_src = pic_src + '6.jpg';
+        const top_2_src = pic_src + '6.jpg';
+        const top_3_src = pic_src + '6.jpg';
+        // 作者图片
+        const miao_src =  pic_src + 'miaomiao.jpg';
+        const tao_src =  pic_src + 'tao1.jpg';
+        const yu_src =  pic_src + 'yuquan.jpg';
+        const fan_src =  pic_src + 'caiqi.jpg';
+
         $(document).ready(function(){
-            // 顶部导航的跳转
+            //设置src
+            set_src("#logo", logo_src);
+            set_src("#top_1", top_1_src);
+            set_src("#top_2", top_2_src);
+            set_src("#top_3", top_3_src);
+            set_src("#miao", miao_src);
+            set_src("#tao", tao_src);
+            set_src("#yu", yu_src);
+            set_src("#fan", fan_src);
+            // 设置顶部导航的跳转
             web_trans("#tohome", './index.html#home');
             web_trans("#tointroduction", './index.html#introduction');
             web_trans("#tocharacteristic", './index.html#characteristic');
@@ -35,7 +63,7 @@
             web_trans("#tofoot", './index.html#foot');
             web_trans("#toqq", 'https://mail.qq.com');
             web_trans("#tomygithub", 'https://github.com/abelgroup');
-            // 点击进入年级页面根目录
+            // 设置点击进入年级页面根目录
             web_trans("#togradeindex", './WEB/Grade/grade_index.html');
         });
     </script>
@@ -48,7 +76,7 @@
         <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
             <!-- 左侧logo -->
             <a href="./index.html" class="d-flex align-items-center me-md-auto text-dark text-decoration-none px-md-4">
-                <img decoding="async" src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/logo_3.png" alt="logo" width="108" height="48">
+                <img decoding="async" id="logo" alt="logo" width="108" height="48">
                 <span class="fs-4 px-md-2">
                     教育资源收藏夹
                 </span>
@@ -99,19 +127,19 @@
             <!-- 轮播图片 -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img decoding="async" src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/6.jpg" class="d-block" style="width:100%;">
+                    <img decoding="async" id="top_1" class="d-block" style="width:100%;">
                     <div class="carousel-caption">
                         <!-- 在此插入图片内部文字 -->
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img decoding="async" src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/6.jpg" class="d-block" style="width:100%;">
+                    <img decoding="async" id="top_2" class="d-block" style="width:100%;">
                     <div class="carousel-caption">
                         <!-- 在此插入图片内部文字 -->
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img decoding="async" src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/6.jpg" class="d-block" style="width:100%;">
+                    <img decoding="async" id="top_3" class="d-block" style="width:100%;">
                     <div class="carousel-caption">
                         <!-- 在此插入图片内部文字 -->
                     </div>
@@ -276,7 +304,7 @@
                         <center>
                             <!-- 卡片1 -->
                             <div class="card">
-                                <img src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/miaomiao.jpg" alt="miaomiao" class="card-img-top px-1 py-1">
+                                <img id="miao" alt="miaomiao" class="card-img-top px-1 py-1">
                                 <div class="card-body">
                                     <h2>
                                         MiaoMiao
@@ -297,7 +325,7 @@
                                     </h2>
                                     mail:1917352431@qq.com
                                 </div>
-                                <img src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/tao1.jpg" alt="tao1" class="card-img-bottom px-1 py-1">
+                                <img id="tao" alt="tao1" class="card-img-bottom px-1 py-1">
                             </div>
                         </center>
                     </div>
@@ -306,7 +334,7 @@
                         <center>
                             <!-- 卡片3 -->
                             <div class="card">
-                                <img src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/yuquan.jpg" alt="yuquan" class="card-img-top px-1 py-1">
+                                <img id="yu" alt="yuquan" class="card-img-top px-1 py-1">
                                 <div class="card-body">
                                     <h2>
                                         玉权哥
@@ -327,7 +355,7 @@
                                     </h2>
                                     mail:3071723667@qq.com 
                                 </div>
-                                <img src="https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/caiqi.jpg" alt="caiqi" class="card-img-bottom px-1 py-1">
+                                <img id="fan" alt="caiqi" class="card-img-bottom px-1 py-1">
                             </div>
                         </center>
                     </div>

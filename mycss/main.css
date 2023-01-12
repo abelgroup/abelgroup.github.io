@@ -3,8 +3,18 @@
     font-family: 'Microsoft JhengHei', 'STHeiti', 'SimHei';
     
     /* 自定义鼠标 */
-    cursor: url('https://gitee.com/schujungle/miao/raw/master/Pic/cursor.ico'), auto !important;
-    /* cursor: url('../Pic/cursor.ico'), auto !important; */
+    /* 由于github原因，在网上正常访问该网页无法显示定制的光标，本地访问则可正常显示 */
+    /* cursor: url('https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/cursor.ico'), auto !important; */
+    cursor: url('../Pic/cursor.ico'), auto !important;
+
+    /* 禁止选中文字 */
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 /* 导航条颜色 */
 nav.navbar{
@@ -29,7 +39,7 @@ ul.nav-pills>li>div.active:hover{
     background-color: #f66092 !important;
 }
 .shadow{
-    box-shadow: 2px 2px 10px rgba(0, 0, 0) inset;
+    box-shadow: 2px 2px 10px #f66092 inset;
 }
 p{
     line-height:30px;
@@ -55,8 +65,9 @@ p{
 .card-body{
     height: auto;
 }
+/* card被hover时的阴影 */ 
 .card:hover{
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 10px #f69fbc;
 }
 .card-body>h2{
     color: #FF80AB;
@@ -70,4 +81,58 @@ p{
 }
 #toqq:hover, #tomygithub:hover{
     color: #fe3e7e !important;
+}
+/* 列表组 */
+.li{
+    font-size: larger;
+    font-weight: 900;
+}
+.list-group{
+    width:auto;
+    max-width:460px;
+    margin:4rem auto;
+}
+.form-check-input:checked + .form-checked-content{
+    opacity:.5;
+}
+.form-check-input-placeholder{
+    pointer-events:none;border-style:dashed;
+}
+[contenteditable]:focus{
+    outline:0;
+}
+.list-group-checkable{
+    display:grid;
+    gap:.5rem;border:0;
+}
+.list-group-checkable .list-group-item{
+    cursor:pointer;
+    border-radius:.5rem;
+}
+.list-group-item-check{
+    position:absolute;
+    clip:rect(0,0,0,0);
+    pointer-events:none;
+}
+.list-group-item-check:hover + .list-group-item{
+    background-color:var(--bs-light);
+}
+.list-group-item-check:checked + .list-group-item{
+    color:#fff;background-color:#ff5b91;
+}
+.list-group-item-check[disabled] + .list-group-item,.list-group-item-check:disabled + .list-group-item{
+    pointer-events:none;filter:none;
+    opacity:.5;
+}
+.center_title{
+    font-size: x-large;
+    font-weight: bolder;
+    color: #ff0055;
+}
+/* 下拉菜单 */
+.dropdown-item:hover{
+    background-color: #f7cedc !important;
+}
+.dropdown-item:active{
+    background-color: #ff4f89 !important;
 }

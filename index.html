@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 网页图标 -->
+    <!-- <link rel="shortcut icon" href="../../Pic/favicon.png" type="image/x-icon"/> -->
+    <link rel="shortcut icon" href="https://s2.loli.net/2023/01/12/wpGnd64zheTA39g.png" type="image/x-icon"/>
 
     <title>Bilearn教育资源收藏夹欢迎您!</title>
 
@@ -26,27 +29,30 @@
     <script src="./myjs/main.js"></script>
 
     <script>
-        // 由于github原因，图片无法显示，于是切换国内gitee仓库内图片链接
+        // 由于github原因，图片无法显示，于是切换SM.MS图床
 
-        // 在此设置图片来源，是本地或者是gitee仓库，二者取其一，别忘了改mycss里的指针
-        // 本地:
-        // const pic_src = './Pic/';
-        // gitee仓库:
-        const pic_src = 'https://gitee.com/schujungle/miao/raw/master/Pic/';
+        // 在此设置图片来源，是本地或者是SM.MS图床，二者取其一，别忘了改mycss里的指针和head里的网页图标
         // logo图片
-        const logo_src = pic_src + 'logo_3.png';
+        const logo_src = 'https://s2.loli.net/2023/01/12/cYAyfBNPRDtC249.png';
         // 顶部轮播三张图片
-        const top_1_src = pic_src + '6.jpg';
-        const top_2_src = pic_src + '6.jpg';
-        const top_3_src = pic_src + '6.jpg';
+        const top_1_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
+        const top_2_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
+        const top_3_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
         // 作者图片
-        const miao_src =  pic_src + 'miaomiao.jpg';
-        const tao_src =  pic_src + 'tao1.jpg';
-        const yu_src =  pic_src + 'yuquan.jpg';
-        const fan_src =  pic_src + 'caiqi.jpg';
+        const miao_src =  'https://s2.loli.net/2023/01/12/BPyaSrvFTNit5qm.jpg';
+        const tao_src =  'https://s2.loli.net/2023/01/12/B1xJ6IeTMfWoXqE.jpg';
+        const yu_src =  'https://s2.loli.net/2023/01/12/frOIxtgyRG6u5aP.jpg';
+        const fan_src =  'https://s2.loli.net/2023/01/12/N3SjFiY4lruVQgv.jpg';
 
         $(document).ready(function(){
-            //设置src
+            // 初始化弹出框
+            // var popoverTriggerList = [].slice.call(
+            //     document.querySelectorAll('[data-bs-toggle="popover"]')
+            //     );
+            // var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            //     return new bootstrap.Popover(popoverTriggerEl);
+            // });
+            //设置图片src
             set_src("#logo", logo_src);
             set_src("#top_1", top_1_src);
             set_src("#top_2", top_2_src);
@@ -56,14 +62,14 @@
             set_src("#yu", yu_src);
             set_src("#fan", fan_src);
             // 设置顶部导航的跳转
-            web_trans("#tohome", './index.html#home');
-            web_trans("#tointroduction", './index.html#introduction');
+            web_trans("#tohome", '#home');
+            web_trans("#tointroduction", '#introduction');
             web_trans("#tocharacteristic", './index.html#characteristic');
-            web_trans("#toauthor", './index.html#author');
-            web_trans("#tofoot", './index.html#foot');
+            web_trans("#toauthor", '#author');
+            web_trans("#tofoot", '#foot');
             web_trans("#toqq", 'https://mail.qq.com');
             web_trans("#tomygithub", 'https://github.com/abelgroup');
-            // 设置点击进入年级页面根目录
+            // 设置进入年级页面根目录的链接
             web_trans("#togradeindex", './WEB/Grade/grade_index.html');
         });
     </script>
@@ -164,7 +170,7 @@
             <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
         </div>
         <div class="py-5">
-            <center><h1><strong>网站介绍</strong></h1></center>
+            <center><h1><strong>-- 网站介绍 --</strong></h1></center>
             <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
             <br>
             <center><h4>一个致力于收集B站上所有教育资源的收藏夹网站</h4></center>
@@ -203,7 +209,7 @@
             <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
         </div>
         <div class="py-5">
-            <center><h1><strong>网站特点</strong></h1></center>
+            <center><h1><strong>-- 网站特点 --</strong></h1></center>
             <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
             <br>
             <!-- 卡片 -->
@@ -292,7 +298,7 @@
             <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
         </div>
         <div class="py-5">
-            <center><h1><strong>网站作者</strong></h1></center>
+            <center><h1><strong>-- 网站作者 --</strong></h1></center>
             <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
             <br>
             <!-- 卡片 -->

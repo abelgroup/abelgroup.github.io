@@ -1,7 +1,7 @@
 // 是否启用本地图片:
 // true则使用本地图片
 // false则使用SM.MS图床图片外链
-const use_local_src = false;
+const use_local_src = true;
 
 
 function load_src(pagename){
@@ -192,17 +192,18 @@ function click_change_active(id){
 
 // 自动调用的页面加载函数
 (function(){
-    if(window.location.pathname == '/index.html'){
+    var path = window.location.pathname.split('/');
+    if(path[path.length-1] == 'index.html'){
         // /index.html
         // 加载index页面图片src
         load_src('index');
     }
-    else if(window.location.pathname == '/WEB/Grade/grade_index.html'){
+    else if(path[path.length-1] == 'grade_index.html'){
         // grade_index.html
         // 只加载基础图片src
         load_src('');
     }
-    else if(window.location.pathname.split('_')[0].split('/')[3] == 'grade'){
+    else if(path[path.length-1].split('_')[0] == 'grade'){
         // grade_1.html~grade_10_.html的网页
         // 加载grade页面图片src
         load_src('grade');

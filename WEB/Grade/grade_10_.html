@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <!-- 
-        grade_1
+        grade_10~12
      -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/x-icon" id="icon"/>
 
     <!-- 年级 -->
-    <title>小学一年级</title>
+    <title>高中一至三年级</title>
 
     <!-- 新 Bootstrap5 核心 CSS 文件 -->
     <link rel="stylesheet" href="../../Bootstrap5/bootstrap.min.css">
@@ -41,30 +41,32 @@
             set_src("#ch", window.ch_src);
             // 2.数学
             set_src("#math", window.math_src);
-            // // 3.英语
-            // set_src("#en", window.en_src);
-            // // 4.物理
-            // set_src("#ph", window.ph_src);
-            // // 5.化学
-            // set_src("#c", window.c_src);
-            // // 6.生物
-            // set_src("#b", window.b_src);
-            // // 7.地理
-            // set_src("#d", window.d_src);
-            // // 8.历史
-            // set_src("#h", window.h_src);
+            // 3.英语
+            set_src("#en", window.en_src);
+            // 4.物理
+            set_src("#ph", window.ph_src);
+            // 5.化学
+            set_src("#c", window.c_src);
+            // 6.生物
+            set_src("#b", window.b_src);
+            // 7.地理
+            set_src("#d", window.d_src);
+            // 8.历史
+            set_src("#h", window.h_src);
             // // 9.信息技术
             // set_src("#x", window.x_src);
-            // 10.小学道德与法治
-            set_src("#dd", window.dd_src);
-            // 11.美术
-            set_src("#art", window.art_src);
-            // 12.音乐
-            set_src("#mu", window.mu_src);
-            // 13.体育
-            set_src("#ti", window.ti_src);
-            // 14.小学科学
-            set_src("#ke", window.ke_src);
+            // // 10.初中道德与法治
+            // set_src("#dd", window.dd_src);
+            // // 11.美术
+            // set_src("#art", window.art_src);
+            // // 12.音乐
+            // set_src("#mu", window.mu_src);
+            // // 13.体育
+            // set_src("#ti", window.ti_src);
+            // // 14.小学科学
+            // set_src("#ke", window.ke_src);
+            // 15.政治
+            set_src("#po", window.po_src);
 
             // 设置首尾导航栏链接跳转
             web_trans("#tosenior", './grade_10_.html');
@@ -78,33 +80,35 @@
 
             // 设置学科卡片跳转链接
             // 1.语文
-            web_trans("#ch_div", '../Subject/1_ch.html');
+            web_trans("#ch_div", '../Subject/10_ch.html');
             // 2.数学
-            web_trans("#math_div",'../Subject/1_math.html');
-            // // 3.英语
-            // web_trans("#en_div", '../Subject/1_en.html');
-            // // 4.物理
-            // web_trans("#ph_div", '../Subject/1_ph.html');
-            // // 5.化学
-            // web_trans("#c_div", '../Subject/1_c.html');
-            // // 6.生物
-            // web_trans("#b_div", '../Subject/1_b.html');
-            // // 7.地理
-            // web_trans("#d_div", '../Subject/1_d.html');
-            // // 8.历史
-            // web_trans("#h_div", '../Subject/1_h.html');
+            web_trans("#math_div",'../Subject/10_math.html');
+            // 3.英语
+            web_trans("#en_div", '../Subject/10_en.html');
+            // 4.物理
+            web_trans("#ph_div", '../Subject/10_ph.html');
+            // 5.化学
+            web_trans("#c_div", '../Subject/10_c.html');
+            // 6.生物
+            web_trans("#b_div", '../Subject/10_b.html');
+            // 7.地理
+            web_trans("#d_div", '../Subject/10_d.html');
+            // 8.历史
+            web_trans("#h_div", '../Subject/10_h.html');
             // // 9.信息技术
-            // web_trans("#x_div", '../Subject/1_x.html');
-            // 10.小学道德与法治
-            web_trans("#dd_div", '../Subject/1_dd.html');
-            // 11.美术
-            web_trans("#art_div", '../Subject/1_art.html');
-            // 12.音乐
-            web_trans("#mu_div", '../Subject/1_mu.html');
-            // 13.体育
-            web_trans("#ti_div", '../Subject/1_ti.html');
-            // 14.小学科学
-            web_trans("#ke_div", '../Subject/1_ke.html');
+            // web_trans("#x_div", '../Subject/10_x.html');
+            // // 10.初中道德与法治
+            // web_trans("#dd_div", '../Subject/10_dd.html');
+            // // 11.美术
+            // web_trans("#art_div", '../Subject/10_art.html');
+            // // 12.音乐
+            // web_trans("#mu_div", '../Subject/10_mu.html');
+            // // 13.体育
+            // web_trans("#ti_div", '../Subject/10_ti.html');
+            // // 14.小学科学
+            // web_trans("#ke_div", '../Subject/10_ke.html');
+            // 15.政治
+            web_trans("#po_div", '../Subject/10_po.html');
 
             // 调整导航栏active的方法
             click_change_active('#tohome');
@@ -225,12 +229,12 @@
             <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
         </div>
         <div class="py-5">
-            <center><h1><strong>-- 小学一年级各科目 --</strong></h1></center>
+            <center><h1><strong>-- 高中一至三年级各科目 --</strong></h1></center>
             <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
             <br>
             <center><h4>请选择您想要学习的科目</h4></center>
             <br>
-            <center><h5>--语文、数学、科学、体育、音乐、美术、道德与法治--</h5></center>
+            <center><h5>--语文、数学、英语、生物、物理、化学、历史、地理、政治--</h5></center>
 
             <!-- 在此各存放学科 -->
             <!-- 第1行 -->
@@ -245,7 +249,7 @@
                                     <img id="ch" alt="语文" class="card-img-top px-2 py-2">
                                     <div class="card-body">
                                         <h2>
-                                            一年级语文
+                                            高中语文
                                         </h2>
                                         (Chinese)
                                     </div>
@@ -259,7 +263,7 @@
                                 <div class="card" id="math_div">
                                     <div class="card-body">
                                         <h2>
-                                            一年级数学
+                                            高中数学
                                         </h2>
                                         (Math)
                                     </div>
@@ -270,14 +274,14 @@
     
                         <div class="col-sm-3">
                             <center>
-                                <!-- 音乐 -->
-                                <div class="card" id="mu_div">
-                                    <img id="mu" alt="音乐" class="card-img-top px-2 py-2">
+                                <!-- 英语 -->
+                                <div class="card" id="en_div">
+                                    <img id="en" alt="英语" class="card-img-top px-2 py-2">
                                     <div class="card-body">
                                         <h2>
-                                            一年级音乐
+                                            高中英语
                                         </h2>
-                                        (Music)
+                                        (English)
                                     </div>
                                 </div>
                             </center>
@@ -285,15 +289,15 @@
     
                         <div class="col-sm-3">
                             <center>
-                                <!-- 体育 -->
-                                <div class="card" id="ti_div">
+                                <!-- 化学 -->
+                                <div class="card" id="c_div">
                                     <div class="card-body">
                                         <h2>
-                                            一年级体育
+                                            高中化学
                                         </h2>
-                                        (PE lesson)
+                                        (Chemistry)
                                     </div>
-                                    <img id="ti" alt="体育" class="card-img-bottom px-2 py-2">
+                                    <img id="c" alt="化学" class="card-img-bottom px-2 py-2">
                                 </div>
                             </center>
                         </div>
@@ -314,45 +318,60 @@
     
                         <div class="col-sm-3">
                             <center>
-                                <!-- 美术 -->
-                                <div class="card" id="art_div">
-                                    <img id="art" alt="美术" class="card-img-top px-2 py-2">
+                                <!-- 生物 -->
+                                <div class="card" id="b_div">
+                                    <img id="b" alt="生物" class="card-img-top px-2 py-2">
                                     <div class="card-body">
                                         <h2>
-                                            一年级美术
+                                            高中生物
                                         </h2>
-                                        (Fine art)
+                                        (Biology)
                                     </div>
+                                </div>
+                            </center>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <center>
+                                <!-- 历史 -->
+                                <div class="card" id="h_div">
+                                    <div class="card-body">
+                                        <h2>
+                                            高中历史
+                                        </h2>
+                                        (History)
+                                    </div>
+                                    <img id="h" alt="历史" class="card-img-bottom px-2 py-2">
                                 </div>
                             </center>
                         </div>
     
                         <div class="col-sm-3">
                             <center>
-                                <!-- 科学 -->
-                                <div class="card" id="ke_div">
+                                <!-- 地理 -->
+                                <div class="card" id="d_div">
+                                    <img id="d" alt="地理" class="card-img-top px-2 py-2">
                                     <div class="card-body">
                                         <h2>
-                                            一年级科学
+                                            高中地理
                                         </h2>
-                                        (Science)
+                                        (Geography)
                                     </div>
-                                    <img id="ke" alt="科学" class="card-img-bottom px-2 py-2">
                                 </div>
                             </center>
                         </div>
-    
+
                         <div class="col-sm-3">
                             <center>
-                                <!-- 道德与法治 -->
-                                <div class="card" id="dd_div">
-                                    <img id="dd" alt="道德与法治" class="card-img-top px-2 py-2">
+                                <!-- 物理 -->
+                                <div class="card" id="ph_div">
                                     <div class="card-body">
                                         <h2>
-                                            一年级道德与法治
+                                            高中物理
                                         </h2>
-                                        (Morality and rule of law)
+                                        (Physics)
                                     </div>
+                                    <img id="ph" alt="物理" class="card-img-bottom px-2 py-2">
                                 </div>
                             </center>
                         </div>
@@ -362,7 +381,33 @@
             </div>
             <!-- 第2行 -->
 
+            <div class="pt-0 mt-0">
+                <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+            </div>
+
             <!-- 第3行 -->
+            <div class="container px-3 py-5">
+                <center>
+                    <div class="row">
+    
+                        <div class="col-sm-3">
+                            <center>
+                                <!-- 政治 -->
+                                <div class="card" id="po_div">
+                                    <img id="po" alt="政治" class="card-img-top px-2 py-2">
+                                    <div class="card-body">
+                                        <h2>
+                                            高中政治
+                                        </h2>
+                                        (Political Work)
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+
+                    </div>
+                </center>
+            </div>
             <!-- 第3行 -->
 
         </div>

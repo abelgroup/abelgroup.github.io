@@ -1,11 +1,6 @@
 *{
     /* 全局字体 */
     font-family: 'Microsoft JhengHei', 'STHeiti', 'SimHei';
-    
-    /* 自定义鼠标 */
-    /* 由于github原因，在网上正常访问该网页无法显示定制的光标，本地访问则可正常显示 */
-    /* cursor: url('https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/cursor.ico'), auto !important; */
-    cursor: url('../Pic/cursor.ico'), auto !important;
 
     /* 禁止选中文字 */
     -moz-user-select: -moz-none;
@@ -16,26 +11,38 @@
     -ms-user-select:none;
     user-select:none;
 }
+
+/* 自定义鼠标 */
+/* 由于github原因，在网上正常访问该网页无法显示定制的光标，本地访问则可正常显示 */
+.cursor_local{
+    /* 本地: */
+    cursor: url('../Pic/cursor.ico'), auto !important;
+}
+.cursor_web{
+    /* github */
+    cursor: url('https://raw.githubusercontent.com/abelgroup/abelgroup.github.io/main/pic/cursor.ico'), auto !important;
+}
+
 /* 导航条颜色 */
 nav.navbar{
     background-color: rgb(255, 248, 255) !important;
 }
 /* 右侧导航文字颜色 */
-ul.nav-pills>li>div{
+ul.nav-pills>li>div, ul.nav-pills>li>a{
     color: rgb(0, 0, 0) !important;
 }
 /* 底部文字颜色 */
-ul.navbar-nav>li>div{
+ul.navbar-nav>li>div, ul.navbar-nav>li>a{
     color: rgb(0, 0, 0) !important;
 }
 /* 右侧导航按钮激活属性 */
-ul.nav-pills>li>div.active{
+ul.nav-pills>li>div.active, ul.nav-pills>li>a.active{
     color: rgb(255, 255, 255) !important;
     background-color: #FF80AB !important;
     font-weight:900;
 }
 /* 遮盖颜色 */
-ul.nav-pills>li>div.active:hover{
+ul.nav-pills>li>div.active:hover, ul.nav-pills>li>a.active:hover{
     background-color: #f66092 !important;
 }
 .shadow{
@@ -53,14 +60,27 @@ p{
     color: rgb(255, 255, 255);
     height: 50%;
 }
+.sm-btn{
+    background-color: #FF80AB;
+    font-size: 150%;
+    border-radius: 5%;
+    color: rgb(255, 255, 255);
+    height: 50%;
+}
 .btn:hover{
     background-color: #fe3e7e;
     color: rgb(255, 255, 255);
     font-size: 220%;
 }
+ .sm-btn:hover{
+    background-color: #fe3e7e;
+    color: rgb(255, 255, 255);
+    font-size: 180%;
+ }
 /* 卡片 */
 .card{
     width: 80%;
+    background-color: rgba(255, 237, 245, 0.166);
 }
 .card-body{
     height: auto;
@@ -74,7 +94,8 @@ p{
     text-shadow: 2px 2px #fff6f6, 3px 3px #fe3e7e;
 }
 .card-header, .card-footer{
-    color: #fe3e7e;
+    color: #fe3e7e !important;
+    background-color: #fff6f6 !important;
 }
 .pipe-colored{
     color: rgb(255, 0, 0)e7e;

@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 网页图标 -->
-    <!-- <link rel="shortcut icon" href="../../Pic/favicon.png" type="image/x-icon"/> -->
-    <link rel="shortcut icon" href="https://s2.loli.net/2023/01/12/wpGnd64zheTA39g.png" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" id="icon"/>
 
     <title>Bilearn教育资源收藏夹欢迎您!</title>
 
@@ -29,38 +28,17 @@
     <script src="./myjs/main.js"></script>
 
     <script>
-        // 由于github原因，图片无法显示，于是切换SM.MS图床
-
-        // 在此设置图片来源，是本地或者是SM.MS图床，二者取其一，别忘了改mycss里的指针和head里的网页图标
-        // logo图片
-        const logo_src = 'https://s2.loli.net/2023/01/12/cYAyfBNPRDtC249.png';
-        // 顶部轮播三张图片
-        const top_1_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
-        const top_2_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
-        const top_3_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
-        // 作者图片
-        const miao_src =  'https://s2.loli.net/2023/01/12/BPyaSrvFTNit5qm.jpg';
-        const tao_src =  'https://s2.loli.net/2023/01/12/B1xJ6IeTMfWoXqE.jpg';
-        const yu_src =  'https://s2.loli.net/2023/01/12/frOIxtgyRG6u5aP.jpg';
-        const fan_src =  'https://s2.loli.net/2023/01/12/N3SjFiY4lruVQgv.jpg';
-
         $(document).ready(function(){
-            // 初始化弹出框
-            // var popoverTriggerList = [].slice.call(
-            //     document.querySelectorAll('[data-bs-toggle="popover"]')
-            //     );
-            // var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            //     return new bootstrap.Popover(popoverTriggerEl);
-            // });
             //设置图片src
-            set_src("#logo", logo_src);
-            set_src("#top_1", top_1_src);
-            set_src("#top_2", top_2_src);
-            set_src("#top_3", top_3_src);
-            set_src("#miao", miao_src);
-            set_src("#tao", tao_src);
-            set_src("#yu", yu_src);
-            set_src("#fan", fan_src);
+            set_src("#logo", window.logo_src);
+            set_src("#top_1", window.top_1_src);
+            set_src("#top_2", window.top_2_src);
+            set_src("#top_3", window.top_3_src);
+            set_src("#miao", window.miao_src);
+            set_src("#tao", window.tao_src);
+            set_src("#yu", window.yu_src);
+            set_src("#fan", window.fan_src);
+            
             // 设置顶部导航的跳转
             web_trans("#tohome", '#home');
             web_trans("#tointroduction", '#introduction');
@@ -69,7 +47,6 @@
             web_trans("#tofoot", '#foot');
             web_trans("#toqq", 'https://mail.qq.com');
             web_trans("#tomygithub", 'https://github.com/abelgroup');
-            // 设置进入年级页面根目录的链接
             web_trans("#togradeindex", './WEB/Grade/grade_index.html');
         });
     </script>
@@ -211,73 +188,91 @@
         <div class="py-5">
             <center><h1><strong>-- 网站特点 --</strong></h1></center>
             <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
-            <br>
             <!-- 卡片 -->
-            <div class="container-fluid px-3">
+            <div class="container-fluid px-3 my-5">
                 <center>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-sm-3">
                         <center>
                             <!-- 卡片1 -->
                             <div class="card">
                                 <div class="card-header">
                                     <h3>
-                                        特点一
+                                        网站设计主题鲜明
                                     </h3>
                                 </div>
                                 <div class="card-body">
                                     <p>
-                                        我是特点一。<br>
-                                        我是特点一。<br>
-                                        我是特点一。<br>
-                                        我是特点一。<br>
-                                        我是特点一。<br>
-                                        我是特点一。<br>
+                                        本网站设计不但单纯、简练、清晰和准确，
+                                        而且在强调艺术性的同时，
+                                        更注重通过独特的风格和强烈的视觉冲击力，
+                                        来鲜明的突出设计主题。
+                                        同时，网页从形式上给人良好的印象，
+                                        鲜明的突出主题，
+                                        能让浏览者在短时间内过目不忘、回味无穷。
                                     </p>
                                 </div>
                             </div>
                         </center>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-3">
                         <center>
                             <!-- 卡片2 -->
                             <div class="card">
                                 <div class="card-body">
                                     <p>
-                                        我是特点二。<br>
-                                        我是特点二。<br>
-                                        我是特点二。<br>
-                                        我是特点二。<br>
-                                        我是特点二。<br>
-                                        我是特点二。<br>
+                                        本网站设计中导航使用超文本链接或图片链接，
+                                        使人们能够在网站上自由前进或后退，
+                                        而不会让他们使用浏览器上的前进或后退。
                                     </p>
                                 </div>
                                 <div class="card-footer">
                                     <h3>
-                                        特点二
+                                        导向清晰
                                     </h3>
                                 </div>
                             </div>
                         </center>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-3">
                         <center>
                             <!-- 卡片3 -->
                             <div class="card">
                                 <div class="card-header">
                                     <h3>
-                                        特点三
+                                        网站设计分割性
                                     </h3>
                                 </div>
                                 <div class="card-body">
                                     <p>
-                                        我是特点三。<br>
-                                        我是特点三。<br>
-                                        我是特点三。<br>
-                                        我是特点三。<br>
-                                        我是特点三。<br>
-                                        我是特点三。<br>
+                                        本网站按照内容、主题和信息的分类要求，
+                                        将页面分成若干板块、栏目，
+                                        使浏览者一目了然。吸引浏览者的眼球，
+                                        还能通过网页达到信息宣传的目的，
+                                        显示出鲜明的信息传达效果
                                     </p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="col-sm-3">
+                        <center>
+                            <!-- 卡片4 -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p>
+                                        设计本网站时，通过准确的定位，
+                                        对页面中的元素进行编排与组合；
+                                        设计网站页面时，并注意整个页面设计风格统一、
+                                        色彩统一、布局统一，
+                                        即形成网站高度的形象统一。
+                                        使整个页面设计的各个部分极为融洽。
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <h3>
+                                        网站设计整体性
+                                    </h3>
                                 </div>
                             </div>
                         </center>
@@ -297,7 +292,7 @@
         <div class="pt-0 mt-0">
             <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
         </div>
-        <div class="py-5">
+        <div class="py-5 my-5">
             <center><h1><strong>-- 网站作者 --</strong></h1></center>
             <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
             <br>

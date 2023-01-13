@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 网页图标 -->
-    <!-- <link rel="shortcut icon" href="../../Pic/favicon.png" type="image/x-icon"/> -->
-    <link rel="shortcut icon" href="https://s2.loli.net/2023/01/12/wpGnd64zheTA39g.png" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" id="icon"/>
 
     <title>请选择您的年级</title>
 
@@ -29,23 +28,21 @@
     <script src="../../myjs/main.js"></script>
 
     <script>
-        // 由于github原因，图片无法显示，于是切换SM.MS图床
-
-        // 在此设置图片来源，是本地或者是SM.MS图床，二者取其一，别忘了改mycss里的指针和head里的网页图标
-        // logo图片
-        const logo_src = 'https://s2.loli.net/2023/01/12/cYAyfBNPRDtC249.png';
-
         $(document).ready(function(){
-            // 初始化弹出框
+            // 初始化弹出框，下面两句语句必须处于:$(document).ready(function(){...}之中，否则无效
             var popoverTriggerList = [].slice.call(
                 document.querySelectorAll('[data-bs-toggle="popover"]')
-                );
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-                return new bootstrap.Popover(popoverTriggerEl);
-            });
+            );
+            var popoverList = popoverTriggerList.map(
+                function (popoverTriggerEl) {
+                    return new bootstrap.Popover(popoverTriggerEl);
+                }
+            );
+            
             //设置图片src
-            set_src("#logo", logo_src);
-            // 设置链接跳转
+            set_src("#logo", window.logo_src);
+
+            // 设置导航栏跳转链接
             web_trans("#tohome", '../../index.html');
             // web_trans("#totop", '#top');
             web_trans("#toprimary", '#primary');
@@ -56,67 +53,23 @@
             web_trans("#tofoot", '#foot');
             web_trans("#toqq", 'https://mail.qq.com');
             web_trans("#tomygithub", 'https://github.com/abelgroup');
-            // 设置年级的跳转
-            $('#li1').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_1.html');
-            });
-            $('#li2').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_2.html');
-            });
-            $('#li3').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_3.html');
-            });
-            $('#li4').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_4.html');
-            });
-            $('#li5').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_5.html');
-            });
-            $('#li6').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_6.html');
-            });
-            $('#li7').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_7.html');
-            });
-            $('#li8').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_8.html');
-            });
-            $('#li9').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_9.html');
-            });
-            $('#li10').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_10.html');
-            });
-            $('#li11').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_11.html');
-            });
-            $('#li12').click(function(){
-                window.location.href = '#foot';
-                remove_pop('#tograde');
-                web_trans("#tograde", './grade_12.html');
-            });
+            
+            // 修改#tograde跳转链接
+            // 小学1~6
+            click_to_change_web_trans('#li1', './grade_1.html');
+            click_to_change_web_trans('#li2', './grade_2.html');
+            click_to_change_web_trans('#li3', './grade_3.html');
+            click_to_change_web_trans('#li4', './grade_4.html');
+            click_to_change_web_trans('#li5', './grade_5.html');
+            click_to_change_web_trans('#li6', './grade_6.html');
+            // 初中7~9
+            click_to_change_web_trans('#li7', './grade_7.html');
+            click_to_change_web_trans('#li8', './grade_8.html');
+            click_to_change_web_trans('#li9', './grade_9.html');
+            // 高中综合10~12
+            click_to_change_web_trans('#li10_', './grade_10_.html');
+            // 大学综合13~16
+            // click_to_change_web_trans('#li10_', './grade_13_.html');
         });
     </script>
 
@@ -288,30 +241,12 @@
                             高中(senior high school)
                         </center>
                     </div>
-                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li10" value="">
-                    <label class="list-group-item py-3 li" for="li10">
-                        高中一年级
+                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li10_" value="">
+                    <label class="list-group-item py-3 li" for="li10_">
+                        高中一至三年级
                         <span class="d-block small opacity-50">
                             可选科目:<br>
-                            语文、数学、英语、物理、化学、生物、历史、政治、信息技术等
-                        </span>
-                    </label>
-
-                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li11" value="">
-                    <label class="list-group-item py-3 li" for="li11">
-                        高中二年级
-                        <span class="d-block small opacity-50">
-                            可选科目:<br>
-                            语文、数学、英语、物理、化学、生物、历史、政治、信息技术等
-                        </span>
-                    </label>
-
-                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li12" value="">
-                    <label class="list-group-item py-3 li" for="li12">
-                        高中三年级
-                        <span class="d-block small opacity-50">
-                            可选科目:<br>
-                            语文、数学、英语、物理、化学、生物、历史、政治、信息技术等
+                            语文、数学、英语、生物、物理、化学、历史、地理、政治
                         </span>
                     </label>
 
@@ -320,32 +255,15 @@
                             大学(university)
                         </center>
                     </div>
-                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li13" value="" disabled>
-                    <label class="list-group-item py-3 li" for="li13">
-                        大一
+                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li13_" value="" disabled>
+                    <label class="list-group-item py-3 li" for="li13_">
+                        大学综合
                         <span class="d-block small opacity-50">
                             抱歉，该年级尚未开放。<br>
                             Sorry, this feature is not yet available.
                         </span>
                     </label>
 
-                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li14" value="" disabled>
-                    <label class="list-group-item py-3 li" for="li14">
-                        大二
-                        <span class="d-block small opacity-50">
-                            抱歉，该年级尚未开放。<br>
-                            Sorry, this feature is not yet available.
-                        </span>
-                    </label>
-
-                    <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="li15" value="" disabled>
-                    <label class="list-group-item py-3 li" for="li15">
-                        大三
-                        <span class="d-block small opacity-50">
-                            抱歉，该年级尚未开放。<br>
-                            Sorry, this feature is not yet available.
-                        </span>
-                    </label>
                 </div>
                 <center>--点击下方按钮进入进入该年级--</center>
                 <center>

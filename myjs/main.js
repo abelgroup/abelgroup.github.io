@@ -20,8 +20,6 @@ function load_src(pagename){
         window.logo_src = web_file_location + 'Pic/logo_3.png';
         // icon
         window.icon_src = web_file_location + 'Pic/favicon.png';
-        // 加载指针
-        change_cursor('cursor_local');
         if(pagename == 'index'){
             // index.html
             // 顶部轮播三张图片
@@ -66,6 +64,14 @@ function load_src(pagename){
             // 政治
             window.po_src = web_file_location + 'Pic/po.jpg';
         }
+        else{
+            // 加载本地图片
+            var inf = window.pic_inf[pagename];
+            var key = Object.keys(inf);
+            for (var i=0;i<key.length;i++){
+                window['pic_' + key[i]] = '../../Pic/' + key[i] + '.jpg'
+            }
+        }
     }
     else{
         // SM.MS图床src
@@ -74,8 +80,6 @@ function load_src(pagename){
         window.logo_src = 'https://s2.loli.net/2023/01/12/cYAyfBNPRDtC249.png';
         // icon
         window.icon_src = 'https://s2.loli.net/2023/01/12/wpGnd64zheTA39g.png';
-        // 加载指针
-        change_cursor('cursor_web');
         if(pagename == 'index'){
             // 顶部轮播三张图片
             window.top_1_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
@@ -118,6 +122,14 @@ function load_src(pagename){
             window.ke_src = 'https://s2.loli.net/2023/01/13/tUQDrWZnI26liHs.jpg';
             // 政治
             window.po_src = 'https://s2.loli.net/2023/01/13/67iUcZa9KutJOgT.jpg';
+        }
+        else{
+            // 加载SMMS外链
+            var inf = window.pic_inf[pagename];
+            var key = Object.keys(inf);
+            for (var i=0;i<key.length;i++){
+                window['pic_' + key[i]] = inf[key[i]]["img_src"]
+            }
         }
     }
 }
@@ -162,12 +174,6 @@ function add_icon_pic(){
     $('#icon').attr('href', window.icon_src);
 }
 
-function change_cursor(cla){
-    // 改变指针
-    // cla:'cursor_local'/'cursor_web'
-    $('*').addClass(cla);
-}
-
 // 设置年级的跳转的函数
 function click_to_change_web_trans(id, href){
     $(id).click(function(){
@@ -190,6 +196,21 @@ function click_change_active(id){
     })
 }
 
+// // 页面调整导航栏active的方法
+// function click_change_active_2(id_list){
+//     var l = id_list.length;
+//     for (var i=0;i<l;i++){
+//         $(id_list[i]).click(
+//             function(){
+//                 for (var j=0;j<l;j++){
+//                     remove_class(id_list[j], 'active');
+//                 }
+//                 $(id_list[i]).addClass('active', 'active');
+//             }
+//         );
+//     }
+// }
+
 // 自动调用的页面加载函数
 (function(){
     var path = window.location.pathname.split('/');
@@ -207,6 +228,10 @@ function click_change_active(id){
         // grade_1.html~grade_10_.html的网页
         // 加载grade页面图片src
         load_src('grade');
+    }
+    else{
+        // subject内的网页
+        load_src(path[path.length-1].split('.')[0]);
     }
     // 加载网页图标
     add_icon_pic();

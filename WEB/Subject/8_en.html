@@ -1,0 +1,418 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 网页图标 -->
+        <link rel="shortcut icon" type="image/x-icon" id="icon"/>
+    
+        <!-- 年级+学科 -->
+        <title>
+        
+            初中二年级英语
+        
+        </title>
+    
+        <!-- 新 Bootstrap5 核心 CSS 文件 -->
+        <link rel="stylesheet" href="../../Bootstrap5/bootstrap.min.css">
+    
+        <!-- jQuery -->
+        <script src="../../jQuery/jquery-1.10.2.min.js"></script>
+    
+        <!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
+        <script src="../../Bootstrap5/popper.min.js"></script>
+    
+        <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+        <script src="../../Bootstrap5/bootstrap.min.js"></script>
+    
+        <!-- pic_inf js -->
+        <script src="../../myjs/pic_inf.js"></script>
+    
+        <!-- 自定义css -->
+        <link rel="stylesheet" href="../../mycss/main.css">
+    
+        <!-- 自定义js -->
+        <script src="../../myjs/main.js"></script>
+    
+        <script>
+            $(document).ready(function(){
+
+    // 设置图片src:
+    set_src("#logo", window.logo_src);
+
+    // 设置视频图片:
+    set_src("#8_en_0", window.pic_8_en_0);
+set_src("#8_en_1", window.pic_8_en_1);
+set_src("#8_en_2", window.pic_8_en_2);
+set_src("#8_en_3", window.pic_8_en_3);
+set_src("#8_en_4", window.pic_8_en_4);
+set_src("#8_en_5", window.pic_8_en_5);
+set_src("#8_en_6", window.pic_8_en_6);
+set_src("#8_en_7", window.pic_8_en_7);
+set_src("#8_en_8", window.pic_8_en_8);
+set_src("#8_en_9", window.pic_8_en_9);
+
+
+    // 设置首尾导航栏链接跳转:
+    web_trans('#to_8_ti', '../Subject/8_ti.html');
+web_trans('#to_8_x', '../Subject/8_x.html');
+web_trans('#to_8_h', '../Subject/8_h.html');
+web_trans('#to_8_d', '../Subject/8_d.html');
+web_trans('#to_8_math', '../Subject/8_math.html');
+web_trans('#to_8_ph', '../Subject/8_ph.html');
+web_trans('#to_8_b', '../Subject/8_b.html');
+web_trans('#to_8_art', '../Subject/8_art.html');
+web_trans('#to_8_ch', '../Subject/8_ch.html');
+web_trans('#to_8_dd', '../Subject/8_dd.html');
+web_trans('#to_8_mu', '../Subject/8_mu.html');
+
+
+    // 每个页面都有的导航:
+    web_trans("#tograde", '../Grade/grade_index.html');
+    web_trans("#tofoot", '#foot');
+    web_trans("#toqq", 'https://mail.qq.com');
+    web_trans("#tomygithub", 'https://github.com/abelgroup');
+
+    // 设置视频卡片跳转链接:
+    web_trans('#8_en_0_div', 'https://www.bilibili.com/video/BV1CE411L78e?from=search');
+web_trans('#8_en_1_div', 'https://www.bilibili.com/video/BV1CE411L78e?from=search');
+web_trans('#8_en_2_div', 'https://www.bilibili.com/video/BV1UJ411X7nF?from=search');
+web_trans('#8_en_3_div', 'https://www.bilibili.com/video/BV1Bh411i7mm?from=search');
+web_trans('#8_en_4_div', 'https://www.bilibili.com/video/BV14K4y1e7wA?from=search');
+web_trans('#8_en_5_div', 'https://www.bilibili.com/video/BV1CE411L78e?from=search');
+web_trans('#8_en_6_div', 'https://www.bilibili.com/video/BV1MK4y1S72z?from=search');
+web_trans('#8_en_7_div', 'https://www.bilibili.com/video/BV1gg411475D?from=search');
+web_trans('#8_en_8_div', 'https://www.bilibili.com/video/BV1cJ41197Gs?from=search');
+web_trans('#8_en_9_div', 'https://www.bilibili.com/video/BV1yL411c7Co?from=search');
+
+
+});
+        </script>
+    
+    </head>
+    <body>
+    
+        <!-- 导航栏 -->
+        <div class="container" id="top">
+            <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+                <!-- 左侧logo -->
+                <a href="../../index.html" class="d-flex align-items-center me-md-auto text-dark text-decoration-none px-md-4">
+                    <img decoding="async" id="logo" alt="logo" width="108" height="48">
+                    <span class="fs-4 px-md-2">
+                        教育资源收藏夹
+                    </span>
+                </a>
+                <!-- 右侧导航 -->
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item">
+                        <div class="nav-link active" data-bs-toggle="pill" id="tograde">
+                            选择年级
+                        </div>
+                    </li>
+                    
+                    
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_ti">
+            体育
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_x">
+            信息技术
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_h">
+            历史
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_d">
+            地理
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_math">
+            数学
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_ph">
+            物理
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_b">
+            生物
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_art">
+            美术
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_ch">
+            语文
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_dd">
+            道德与法治
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <div class="nav-link" data-bs-toggle="pill" id="to_8_mu">
+            音乐
+        </div>
+    </li>
+
+
+                    
+                    <li class="nav-item">
+                        <div class="nav-link" data-bs-toggle="pill" id="tofoot">
+                            联系我们
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- 导航栏 -->
+    
+        <!-- 学科选择 -->
+        <div class="containe-fluidr pt-0 px-0" id="introduction">
+            <div class="pt-0 mt-0">
+                <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+            </div>
+            <div class="py-5">
+                <center><h1><strong>
+                
+                    -- 初中二年级英语课程资源 --
+                    
+                </strong></h1></center>
+                <center><hr style="width: 15%; color: #ff0000;" size="5px"></center>
+                <!-- 在此各存放学科 -->
+                
+                    
+    <!-- 第1行 -->
+    <div class="container px-3 py-5">
+        <center>
+            <div class="row">
+            
+                
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_0_div">
+                <img id="8_en_0" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《初中八年级英语上册+下册人教版》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_1_div">
+                <img id="8_en_1" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《初二英语八年级英语上册人教版》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_2_div">
+                <img id="8_en_2" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《【人教版】初二英语上册八年级英语》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_3_div">
+                <img id="8_en_3" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《【初二英语名师课】初中八年级英语上册名师同步视频课程》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+                
+            </div>             
+            </center>
+    </div>
+    <!-- 第1行 -->
+
+    <div class="pt-0 mt-0">
+        <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+    </div>
+
+    <!-- 第2行 -->
+    <div class="container px-3 py-5">
+        <center>
+            <div class="row">
+
+                
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_4_div">
+                <img id="8_en_4" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《初中英语八年级上册人教版》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_5_div">
+                <img id="8_en_5" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《初中八年级英语上册+下册人教版》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_6_div">
+                <img id="8_en_6" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《初二英语八年级下册英语人教版》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_7_div">
+                <img id="8_en_7" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《人教版八年级下册英语微课合集》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+
+            </div>             
+            </center>
+    </div>
+    <!-- 第2行 -->
+
+    <div class="pt-0 mt-0">
+        <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+    </div>
+
+    <!-- 第3行 -->
+    <div class="container px-3 py-5">
+        <center>
+            <div class="row">
+
+                
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_8_div">
+                <img id="8_en_8" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《【人教版】初二英语下册八年级英语下册》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="col-sm-3">
+        <center>
+            <div class="card" id="8_en_9_div">
+                <img id="8_en_9" class="card-img-top px-2 py-2">
+                <div class="card-body">
+                    《【初二英语下册】人教版八年级下册英语名师同步视频课程》
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+
+            </div>
+        </center>
+    </div>
+    <!-- 第3行 -->
+
+                    
+            </div>
+            <div class="pt-0 mt-0">
+                <center><hr style="width: 100%; color: #ff6196;" size="3px"></center>
+            </div>
+        </div>
+        <!-- 学科选择 -->
+    
+        <!-- 联系我们 -->
+        <div class="container-fluid px-0" id="foot">
+            <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="nav-link">
+                            <strong>
+                                如何联系我们:
+                            </strong>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" id="toqq">
+                            QQ-mail
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" id="tomygithub">
+                            站长的Github
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- 联系我们 -->      
+    
+    </body>
+    </html>

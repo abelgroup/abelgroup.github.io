@@ -1,7 +1,7 @@
 // 是否启用本地图片:
 // true则使用本地图片
 // false则使用SM.MS图床图片外链
-const USE_LOCAL_SRC = true;
+const USE_LOCAL_SRC = false;
 
 
 function load_src(pagename, base=true){

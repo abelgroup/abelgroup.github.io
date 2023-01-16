@@ -1,136 +1,76 @@
 // 是否启用本地图片:
 // true则使用本地图片
 // false则使用SM.MS图床图片外链
-const use_local_src = false;
+const USE_LOCAL_SRC = true;
 
 
-function load_src(pagename){
+function load_src(pagename, base=true){
     // 此函数作用为加载所有所需的图片src变量
     // pagename为网页名称
-    if(use_local_src){
-        // 本地图片src
-        if(pagename == 'index'){
-            web_file_location = './';
-        }
-        else{
-            web_file_location = '../../';
-        }
+
+    // 本地方式
+    if(USE_LOCAL_SRC){
         // 任意网页均需加载的图片：
-        // logo图片
-        window.logo_src = web_file_location + 'Pic/logo_3.png';
-        // icon
-        window.icon_src = web_file_location + 'Pic/favicon.png';
-        if(pagename == 'index'){
-            // index.html
-            // 顶部轮播三张图片
-            window.top_1_src = web_file_location + 'Pic/6.jpg';
-            window.top_2_src = web_file_location + 'Pic/6.jpg';
-            window.top_3_src = web_file_location + 'Pic/6.jpg';
-            // 作者图片
-            window.miao_src =  web_file_location + 'Pic/miaomiao.jpg';
-            window.tao_src =  web_file_location + 'Pic/tao1.jpg';
-            window.yu_src =  web_file_location + 'Pic/yuquan.jpg';
-            window.fan_src =  web_file_location + 'Pic/caiqi.jpg';
-        }
-        else if(pagename == 'grade'){
-            // 语文
-            window.ch_src = web_file_location + 'Pic/ch.jpg';
-            // 数学
-            window.math_src = web_file_location + 'Pic/ma.jpg';
-            // 英语
-            window.en_src = web_file_location + 'Pic/en.jpg';
-            // 物理
-            window.ph_src = web_file_location + 'Pic/ph.jpg';
-            // 化学
-            window.c_src = web_file_location + 'Pic/c.jpg';
-            // 生物
-            window.b_src = web_file_location + 'Pic/b.jpg';
-            // 地理
-            window.d_src = web_file_location + 'Pic/d.jpg';
-            // 历史
-            window.h_src = web_file_location + 'Pic/h.jpg';
-            // 信息技术
-            window.x_src = web_file_location + 'Pic/x.jpg';
-            // 小学道德与法治
-            window.dd_src = web_file_location + 'Pic/dd.jpg';
-            // 美术
-            window.art_src = web_file_location + 'Pic/art.jpg';
-            // 音乐
-            window.mu_src = web_file_location + 'Pic/mu.jpg';
-            // 体育
-            window.ti_src = web_file_location + 'Pic/ti.jpg';
-            // 小学科学
-            window.ke_src = web_file_location + 'Pic/ke.jpg';
-            // 政治
-            window.po_src = web_file_location + 'Pic/po.jpg';
-        }
-        else{
+        load_both_local(pagename);
+        if(base){
             // 加载本地图片
-            var inf = window.pic_inf[pagename];
-            var key = Object.keys(inf);
-            for (var i=0;i<key.length;i++){
-                window['pic_' + key[i]] = '../../Pic/' + key[i] + '.jpg'
-            }
+            load_loacl(pagename);
         }
     }
+    // SM.MS方式
     else{
-        // SM.MS图床src
         // 任意网页均需加载的图片：
-        // logo图片
-        window.logo_src = 'https://s2.loli.net/2023/01/12/cYAyfBNPRDtC249.png';
-        // icon
-        window.icon_src = 'https://s2.loli.net/2023/01/12/wpGnd64zheTA39g.png';
-        if(pagename == 'index'){
-            // 顶部轮播三张图片
-            window.top_1_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
-            window.top_2_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
-            window.top_3_src = 'https://s2.loli.net/2023/01/12/xveSVAwYgj3mpLF.jpg';
-            // 作者图片
-            window.miao_src =  'https://s2.loli.net/2023/01/12/BPyaSrvFTNit5qm.jpg';
-            window.tao_src =  'https://s2.loli.net/2023/01/12/B1xJ6IeTMfWoXqE.jpg';
-            window.yu_src =  'https://s2.loli.net/2023/01/12/frOIxtgyRG6u5aP.jpg';
-            window.fan_src =  'https://s2.loli.net/2023/01/12/N3SjFiY4lruVQgv.jpg';
-        }
-        else if(pagename == 'grade'){
-            // 语文
-            window.ch_src = 'https://s2.loli.net/2023/01/13/hta64C9HgIfeGwX.jpg';
-            // 数学
-            window.math_src = 'https://s2.loli.net/2023/01/13/64ZLCfaonGv3Rsj.jpg';
-            // 英语
-            window.en_src = 'https://s2.loli.net/2023/01/13/4nfZoEAg7bw15mY.jpg';
-            // 物理
-            window.ph_src = 'https://s2.loli.net/2023/01/13/SGR7yz4tPeXNAxb.jpg';
-            // 化学
-            window.c_src = 'https://s2.loli.net/2023/01/13/VaAew8NHupxyRLl.jpg';
-            // 生物
-            window.b_src = 'https://s2.loli.net/2023/01/13/uhcCmVKJv7NP1kn.jpg';
-            // 地理
-            window.d_src = 'https://s2.loli.net/2023/01/13/6vXe5wL1EgsopmZ.jpg';
-            // 历史
-            window.h_src = 'https://s2.loli.net/2023/01/13/tg5uQEXbmD3ROaz.jpg';
-            // 信息技术
-            window.x_src = 'https://s2.loli.net/2023/01/13/iP7vXJUonZdgVbH.jpg';
-            // 小学道德与法治
-            window.dd_src = 'https://s2.loli.net/2023/01/13/kNvIBJdZre1sjtR.jpg';
-            // 美术
-            window.art_src = 'https://s2.loli.net/2023/01/13/8ReWUYlXvySktT6.jpg';
-            // 音乐
-            window.mu_src = 'https://s2.loli.net/2023/01/13/p9UEIb5s4RDwXNL.jpg';
-            // 体育
-            window.ti_src = 'https://s2.loli.net/2023/01/13/moSewBH4diG32J6.jpg';
-            // 小学科学
-            window.ke_src = 'https://s2.loli.net/2023/01/13/tUQDrWZnI26liHs.jpg';
-            // 政治
-            window.po_src = 'https://s2.loli.net/2023/01/13/67iUcZa9KutJOgT.jpg';
-        }
-        else{
+        load_both_smms()
+        if (base){
             // 加载SMMS外链
-            var inf = window.pic_inf[pagename];
-            var key = Object.keys(inf);
-            for (var i=0;i<key.length;i++){
-                window['pic_' + key[i]] = inf[key[i]]["img_src"]
-            }
+            load_smms(pagename);
         }
+    }
+}
+
+function get_location(pagename){
+    if(pagename == 'index'){
+        web_file_location = './';
+    }
+    else{
+        web_file_location = '../../';
+    }
+    return web_file_location;
+}
+
+function load_both_local(pagename){
+    // 以本地方式加载任意网页均需加载的图片
+    var inf = window.both;
+    var key = Object.keys(inf);
+    for (var i=0;i<key.length;i++){
+        window[key[i]] = get_location(pagename) + inf[key[i]]['loacl'];
+    }
+}
+
+function load_both_smms(){
+    // 以smms方式加载任意网页均需加载的图片
+    var inf = window.both;
+    var key = Object.keys(inf);
+    for (var i=0;i<key.length;i++){
+        window[key[i]] = inf[key[i]]['smms'];
+    }
+}
+
+function load_loacl(pagename){
+    // 加载本地图片
+    var inf = window.pic_inf[pagename];
+    var key = Object.keys(inf);
+    for (var i=0;i<key.length;i++){
+        window['pic_' + key[i]] = get_location(pagename) + 'Pic/' + key[i] + '.jpg';
+    }
+}
+
+function load_smms(pagename){
+    // 加载SMMS外链
+    var inf = window.pic_inf[pagename];
+    var key = Object.keys(inf);
+    for (var i=0;i<key.length;i++){
+        window['pic_' + key[i]] = inf[key[i]];
     }
 }
 
@@ -171,7 +111,7 @@ function remove_class(id, cla){
 
 function add_icon_pic(){
     // 加载网页图标的函数
-    $('#icon').attr('href', window.icon_src);
+    $('#icon').attr('href', window.pic_icon);
 }
 
 // 设置年级的跳转的函数
@@ -222,7 +162,7 @@ function click_change_active(id){
     else if(path[path.length-1] == 'grade_index.html'){
         // grade_index.html
         // 只加载基础图片src
-        load_src('');
+        load_src('grade', false);
     }
     else if(path[path.length-1].split('_')[0] == 'grade'){
         // grade_1.html~grade_10_.html的网页

@@ -25,6 +25,9 @@
     <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
     <script src="../../Bootstrap5/bootstrap.min.js"></script>
 
+    <!-- pic_inf js -->
+    <script src="../../myjs/pic_inf.js"></script>
+
     <!-- 自定义css -->
     <link rel="stylesheet" href="../../mycss/main.css">
 
@@ -34,39 +37,39 @@
     <script>
         $(document).ready(function(){
             // 设置图片src
-            set_src("#logo", window.logo_src);
+            set_src("#logo", window.pic_logo);
 
             // 设置学科图片:
             // 1.语文
-            set_src("#ch", window.ch_src);
+            set_src("#ch", window.pic_ch);
             // 2.数学
-            set_src("#math", window.math_src);
+            set_src("#math", window.pic_math);
             // 3.英语
-            set_src("#en", window.en_src);
+            set_src("#en", window.pic_en);
             // 4.物理
-            set_src("#ph", window.ph_src);
+            set_src("#ph", window.pic_ph);
             // 5.化学
-            set_src("#c", window.c_src);
+            set_src("#c", window.pic_c);
             // 6.生物
-            set_src("#b", window.b_src);
+            set_src("#b", window.pic_b);
             // 7.地理
-            set_src("#d", window.d_src);
+            set_src("#d", window.pic_d);
             // 8.历史
-            set_src("#h", window.h_src);
+            set_src("#h", window.pic_h);
             // // 9.信息技术
-            // set_src("#x", window.x_src);
+            // set_src("#x", window.pic_x);
             // // 10.初中道德与法治
-            // set_src("#dd", window.dd_src);
+            // set_src("#dd", window.pic_dd);
             // // 11.美术
-            // set_src("#art", window.art_src);
+            // set_src("#art", window.pic_art);
             // // 12.音乐
-            // set_src("#mu", window.mu_src);
+            // set_src("#mu", window.pic_mu);
             // // 13.体育
-            // set_src("#ti", window.ti_src);
+            // set_src("#ti", window.pic_ti);
             // // 14.小学科学
-            // set_src("#ke", window.ke_src);
+            // set_src("#ke", window.pic_ke);
             // 15.政治
-            set_src("#po", window.po_src);
+            set_src("#po", window.pic_po);
 
             // 设置首尾导航栏链接跳转
             web_trans("#tosenior", './grade_10_.html');

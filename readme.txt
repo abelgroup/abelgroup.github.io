@@ -1,7 +1,7 @@
 本网站支持两种图片src来源:
     如使用本地src，则可以无需网络查看本网站。
     如使用SM.MS外链，则可部署到github Page服务上，以便在互联网上查看。
-部署网址:abelgroup.github.io
+部署网址:abelgroup.github.io/index.html
 
 如何切换图片的src来源（本地/SM.MS外链）;
 只需一步:

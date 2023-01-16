@@ -207,7 +207,7 @@ NAV_ITEM = """
 # set_src, nav_trans, v_trans
 SCRIPT = """
     // 设置图片src:
-    set_src("#logo", window.logo_src);
+    set_src("#logo", window.pic_logo);
 
     // 设置视频图片:
     {set_src}

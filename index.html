@@ -21,6 +21,9 @@
     <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
     <script src="./Bootstrap5/bootstrap.min.js"></script>
 
+    <!-- pic_inf js -->
+    <script src="./myjs/pic_inf.js"></script>
+
     <!-- 自定义css -->
     <link rel="stylesheet" href="./mycss/main.css">
 
@@ -28,16 +31,20 @@
     <script src="./myjs/main.js"></script>
 
     <script>
+        // 改变xxx高度，使轮播图片完全显示 
+        function change_height(){
+                $('#xxx').css('height', $("#con").outerHeight(true));
+            }
         $(document).ready(function(){
             //设置图片src
-            set_src("#logo", window.logo_src);
-            set_src("#top_1", window.top_1_src);
-            set_src("#top_2", window.top_2_src);
-            set_src("#top_3", window.top_3_src);
-            set_src("#miao", window.miao_src);
-            set_src("#tao", window.tao_src);
-            set_src("#yu", window.yu_src);
-            set_src("#fan", window.fan_src);
+            set_src("#logo", window.pic_logo);
+            set_src("#top_1", window.pic_top_1);
+            set_src("#top_2", window.pic_top_2);
+            set_src("#top_3", window.pic_top_3);
+            set_src("#miao", window.pic_miao);
+            set_src("#tao", window.pic_tao);
+            set_src("#yu", window.pic_yu);
+            set_src("#fan", window.pic_fan);
             
             // 设置顶部导航的跳转
             web_trans("#tohome", '#home');
@@ -48,6 +55,10 @@
             web_trans("#toqq", 'https://mail.qq.com');
             web_trans("#tomygithub", 'https://github.com/abelgroup');
             web_trans("#togradeindex", './WEB/Grade/grade_index.html');
+
+            // 自动在窗口大小变化时设置xxxdiv块的高度 
+            change_height();
+            window.onresize = change_height;
         });
     </script>
 
@@ -56,7 +67,7 @@
 
     <!-- 导航栏 -->
     <div class="container">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top"  id="con">
             <!-- 左侧logo -->
             <a href="./index.html" class="d-flex align-items-center me-md-auto text-dark text-decoration-none px-md-4">
                 <img decoding="async" id="logo" alt="logo" width="108" height="48">
@@ -96,8 +107,13 @@
     </div>
     <!-- 导航栏 -->
 
+    <!-- 该div只起到正确显示轮播图片的作用 -->
+    <div class="container">
+        <div id="xxx"></div>
+    </div>
+
     <!-- 轮播 -->
-    <div class="container-fluid pt-3 px-0" id="home">
+    <div class="container-fluid pt-0 px-0" id="home">
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
     
             <!-- 指示符 -->
@@ -157,13 +173,13 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     本站名称： bilearn教育资源收藏夹。
                     本站是一个bilibili资源收集网站，
-                    努力于收集B站上所有有用的教育资源。
+                    致力于收集B站上所有有用的教育资源。
                     无论是从小学一年级，还是高中三年级。
                 </p>
                 <p>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     本站的建立者--我们，是山东师范大学教育学部电教本2001的四位男生，
-                    如要相联系我们，请点击网页上方的“联系我们”。
+                    如要想联系我们，请点击网页上方的“联系我们”。
                     如要想查看教学视频，请进入本站。
                 </p>
                 <center>--点击下方按钮进入本站--</center>

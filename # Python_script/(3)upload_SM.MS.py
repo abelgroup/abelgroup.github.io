@@ -1,6 +1,6 @@
 from os import listdir
 from json import load, dump
-from time import localtime, time
+from time import localtime, time, sleep
 from requests import post, exceptions
 from typing import TextIO
 from functools import reduce
@@ -59,6 +59,7 @@ class SMMS(object):
                 error2: str = 'Flood detected. You can only upload 100 images per hour'
                 error3: str = 'Upload file frequency limit'
                 error4: str = 'Flood detected. You can only upload 200 images per day'
+                error5: str = 'Flood detected. You can only upload 20 images per minute'
                 if error in res['message']:
                     return res['message'][len(error):].strip(" ")
                 elif error2 in res['message']:
@@ -67,11 +68,15 @@ class SMMS(object):
                     raise SystemExit
                 elif error4 in res['message']:
                     raise Exception('[提示]达到每日上限，请明日上传')
+                elif error5 in res['message']:
+                    sleep(10)
                 else:
                     raise Exception('[提示]{}其他错误:\n{}'.format(img_path, res['message']))
         except ValueError:
             raise Exception('[提示]请关闭vpn，或检查是否有其他问题')
         except exceptions.ReadTimeout:
+            raise SystemExit
+        except exceptions.ConnectionError:
             raise SystemExit
 
     def upload_img_file(self, file_path: str, save_loop: int = 10) -> None:
